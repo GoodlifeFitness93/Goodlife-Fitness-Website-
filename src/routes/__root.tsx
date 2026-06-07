@@ -83,6 +83,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Goodlife Fitness Club" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Goodlife Fitness Club — Biggest Gym in Solapur" },
+      { name: "twitter:title", content: "Goodlife Fitness Club — Biggest Gym in Solapur" },
+      { property: "og:description", content: "Solapur's largest premium fitness destination — advanced equipment, spa, yoga, boxing & expert coaching." },
+      { name: "twitter:description", content: "Solapur's largest premium fitness destination — advanced equipment, spa, yoga, boxing & expert coaching." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3a0d3f2d-4b1b-48b4-b8c7-bb61c1e49586/id-preview-b29d3449--da5e19b6-fdcf-4f3f-880f-5c0c8ce09180.lovable.app-1780826342402.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3a0d3f2d-4b1b-48b4-b8c7-bb61c1e49586/id-preview-b29d3449--da5e19b6-fdcf-4f3f-880f-5c0c8ce09180.lovable.app-1780826342402.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
