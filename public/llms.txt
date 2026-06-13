@@ -1,0 +1,11 @@
+# Goodlife Fitness Club
+
+> Premium fitness club in Solapur focused on strength training, cardio, boxing, yoga, recovery and body transformation.
+
+Goodlife Fitness Club is designed for people searching for a premium gym in Solapur with advanced machines, expert coaching and a high-end workout environment.
+
+## Pages
+- [Home](/): Overview of facilities, training zones, transformations, location and contact details.
+
+## Optional
+- [Sitemap](/sitemap.xml): Machine-readable list of public pages.
