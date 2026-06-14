@@ -670,25 +670,40 @@ function SocialSection() {
   );
 }
 
-function LifestyleSection() {
+function TrainersSection() {
   return (
-    <section className="bg-background py-24 md:py-32">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-16">
-        <ImageFrame src={floralCornerAsset.url} alt="Premium floral selfie corner at Goodlife Fitness Club" />
-        <div>
-          <Eyebrow>Instagram Moments</Eyebrow>
-          <SectionTitle>
-            Fitness Meets <span className="text-gold">Lifestyle</span>
-          </SectionTitle>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Premium details shape the member experience beyond training itself. The floral selfie corner adds softness, aspiration and a luxury-club feel that makes the brand more memorable and more shareable.
-          </p>
-          <div className="mt-8 space-y-4">
-            <FeaturePill title="Shareability" text="Creates social-first moments that extend Goodlife beyond the gym floor." />
-            <FeaturePill title="Member Experience" text="Adds delight, atmosphere and a club-like premium finish." />
-            <FeaturePill title="Brand Perception" text="Signals lifestyle, care and attention to detail rather than basic utility." />
+    <section id="trainers" className="bg-background py-24 md:py-32">
+      <div className="mx-auto max-w-5xl px-6 text-center">
+        <Eyebrow centered>Meet Our Trainers</Eyebrow>
+        <SectionTitle>
+          Coached By <span className="text-primary">The Best</span>
+        </SectionTitle>
+
+        <motion.article
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="premium-panel mx-auto mt-14 max-w-xl px-8 py-10"
+        >
+          <div className="mx-auto size-40 overflow-hidden rounded-full border-2 border-primary/40 bg-elevated shadow-[0_0_60px_-10px_rgba(255,120,31,0.55)]">
+            <img
+              src={trainerRaghuImg}
+              alt="Raghu Sir — Owner and Head Trainer at Goodlife Fitness Club"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
           </div>
-        </div>
+          <h3 className="mt-6 text-3xl uppercase text-foreground md:text-4xl">Raghu Sir</h3>
+          <p className="mt-2 text-xs uppercase tracking-[0.28em] text-primary">
+            Owner & Head Trainer | Goodlife Fitness Club
+          </p>
+          <ul className="mt-6 space-y-2 text-sm leading-relaxed text-foreground/80">
+            <li>10+ Years Experience</li>
+            <li>Transformation Specialist</li>
+            <li>Personal Training Expert</li>
+          </ul>
+        </motion.article>
       </div>
     </section>
   );
