@@ -12,7 +12,12 @@ export function Location() {
               <MapPin className="size-5 text-ember mt-1 shrink-0" />
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Address</div>
-                <p className="leading-relaxed">Sai Icon, Near Ambassador Hotel,<br />Dharamsi Lane, Murarji Peth,<br />Solapur, Maharashtra 413001</p>
+                <p className="leading-relaxed">
+                  Goodlife Fitness Club,<br />
+                  Sai Icon, near Ambassador Hotel,<br />
+                  Dharamsi Lane, Murarji Peth,<br />
+                  Solapur, Maharashtra 413001, India
+                </p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -34,7 +39,7 @@ export function Location() {
         <div className="lg:col-span-3 aspect-[4/3] lg:aspect-auto overflow-hidden border border-border">
           <iframe
             title="Goodlife Fitness Club location"
-            src="https://maps.google.com/maps?q=Sai+Icon+Ambassador+Hotel+Dharamsi+Lane+Murarji+Peth+Solapur&output=embed"
+            src="https://maps.google.com/maps?q=Goodlife+Fitness+Club+Sai+Icon+near+Ambassador+Hotel+Dharamsi+Lane+Murarji+Peth+Solapur+Maharashtra+413001&output=embed"
             className="w-full h-full min-h-[400px] grayscale contrast-125"
             loading="lazy"
           />
