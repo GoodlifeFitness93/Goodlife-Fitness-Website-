@@ -567,9 +567,29 @@ function TransformationSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {transformations.map((item) => (
-            <BeforeAfterCard key={item.name} {...item} />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {transformations.map((item, i) => (
+            <motion.article
+              key={item.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.55, delay: i * 0.08 }}
+              className="premium-panel overflow-hidden p-4"
+            >
+              <div className="relative overflow-hidden rounded-[8px] border border-border/70 bg-black">
+                <img src={item.image} alt={`${item.name} transformation at Goodlife Fitness Club`} loading="lazy" className="h-full w-full object-cover" />
+              </div>
+              <div className="mt-4 flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl uppercase text-foreground">{item.name}</h3>
+                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-primary">{item.result}</p>
+                </div>
+                <div className="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-primary">
+                  Real Progress
+                </div>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>
