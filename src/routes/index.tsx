@@ -362,44 +362,20 @@ function ReceptionSection() {
   );
 }
 
-function FacilitiesGridSection() {
+function FacilitiesHeaderSection() {
   return (
-    <section id="facilities" className="bg-elevated py-24 md:py-32">
+    <section id="facilities" className="bg-elevated py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <Eyebrow>Facilities Overview</Eyebrow>
             <SectionTitle>
-              Eight Signature <span className="text-primary">Experiences</span>
+              World-Class <span className="text-primary">Facilities</span>
             </SectionTitle>
           </div>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-right">
             Every space inside Goodlife Fitness Club is designed as a premium experience — from high-energy performance floors to calmer wellness zones and social corners members actually want to share.
           </p>
-        </div>
-
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {facilities.map(({ title, copy, image, icon: Icon }, index) => (
-            <motion.article
-              key={title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.55, delay: (index % 4) * 0.08 }}
-              className="group relative aspect-[4/5] overflow-hidden rounded-[8px] border border-border/70"
-            >
-              <img src={image} alt={title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,6,8,0.08)_0%,rgba(6,6,8,0.26)_38%,rgba(6,6,8,0.95)_100%)]" />
-              <div className="absolute inset-0 rounded-[8px] border border-primary/0 transition-colors duration-500 group-hover:border-primary/40" />
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <div className="mb-4 grid size-11 place-items-center rounded-full border border-primary/30 bg-background/35 text-primary backdrop-blur-xl">
-                  <Icon className="size-5" />
-                </div>
-                <h3 className="text-2xl uppercase leading-none text-foreground">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/72">{copy}</p>
-              </div>
-            </motion.article>
-          ))}
         </div>
       </div>
     </section>
