@@ -126,20 +126,17 @@ const transformations = [
   {
     name: "Weight Loss",
     result: "-18 kg · 8 months",
-    image: transform1,
-    before: 32,
+    image: transform2Asset.url,
   },
   {
     name: "Muscle Gain",
     result: "+11 kg lean mass · 7 months",
-    image: transform2,
-    before: 46,
+    image: transform1Asset.url,
   },
   {
     name: "Body Recomposition",
-    result: "Fat loss + strength gain · 10 months",
-    image: transform3,
-    before: 38,
+    result: "3 month transformation",
+    image: transform3Asset.url,
   },
 ];
 
