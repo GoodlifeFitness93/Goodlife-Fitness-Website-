@@ -38,6 +38,7 @@ import floralCornerAsset from "@/assets/goodlife-floral-selfie-corner.png.asset.
 import transform1Asset from "@/assets/transform1-new.png.asset.json";
 import transform2Asset from "@/assets/transform2-new.png.asset.json";
 import transform3Asset from "@/assets/transform3-new.png.asset.json";
+import trainerRaghuImg from "@/assets/trainer.jpg";
 
 const WHATSAPP_URL =
   "https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans.";
