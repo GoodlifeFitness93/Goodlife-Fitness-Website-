@@ -205,7 +205,7 @@ function Index() {
         <HeroSection />
         <MomentumStrip />
         <ReceptionSection />
-        <FacilitiesGridSection />
+        <FacilitiesHeaderSection />
         <StrengthSection />
         <EquipmentSection />
         <SpinStudioSection />
@@ -214,9 +214,10 @@ function Index() {
         <YogaSection />
         <PlanningSection />
         <TransformationSection />
+        <TrainersSection />
         <SocialSection />
-        <LifestyleSection />
         <TestimonialsSection />
+        <EnquirySection />
         <FinalCtaSection />
         <Location />
       </main>
