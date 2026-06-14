@@ -10,7 +10,7 @@ import {
   Dumbbell,
   Flame,
   HeartPulse,
-  Instagram,
+  Camera as Instagram,
   MapPin,
   MessageCircle,
   Phone,
