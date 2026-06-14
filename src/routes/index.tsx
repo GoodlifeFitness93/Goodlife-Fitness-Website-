@@ -35,9 +35,9 @@ import boxingArenaAsset from "@/assets/goodlife-boxing-arena.png.asset.json";
 import transformationLoungeAsset from "@/assets/goodlife-transformation-lounge.png.asset.json";
 import selfiePointAsset from "@/assets/goodlife-selfie-point.png.asset.json";
 import floralCornerAsset from "@/assets/goodlife-floral-selfie-corner.png.asset.json";
-import transform1 from "@/assets/transform1.jpg";
-import transform2 from "@/assets/transform2.jpg";
-import transform3 from "@/assets/transform3.jpg";
+import transform1Asset from "@/assets/transform1-new.png.asset.json";
+import transform2Asset from "@/assets/transform2-new.png.asset.json";
+import transform3Asset from "@/assets/transform3-new.png.asset.json";
 
 const WHATSAPP_URL =
   "https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans.";
