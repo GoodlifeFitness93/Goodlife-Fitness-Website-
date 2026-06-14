@@ -35,9 +35,10 @@ import boxingArenaAsset from "@/assets/goodlife-boxing-arena.png.asset.json";
 import transformationLoungeAsset from "@/assets/goodlife-transformation-lounge.png.asset.json";
 import selfiePointAsset from "@/assets/goodlife-selfie-point.png.asset.json";
 import floralCornerAsset from "@/assets/goodlife-floral-selfie-corner.png.asset.json";
-import transform1 from "@/assets/transform1.jpg";
-import transform2 from "@/assets/transform2.jpg";
-import transform3 from "@/assets/transform3.jpg";
+import transform1Asset from "@/assets/transform1-new.png.asset.json";
+import transform2Asset from "@/assets/transform2-new.png.asset.json";
+import transform3Asset from "@/assets/transform3-new.png.asset.json";
+import trainerRaghuImg from "@/assets/trainer.jpg";
 
 const WHATSAPP_URL =
   "https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans.";
@@ -126,20 +127,17 @@ const transformations = [
   {
     name: "Weight Loss",
     result: "-18 kg · 8 months",
-    image: transform1,
-    before: 32,
+    image: transform2Asset.url,
   },
   {
     name: "Muscle Gain",
     result: "+11 kg lean mass · 7 months",
-    image: transform2,
-    before: 46,
+    image: transform1Asset.url,
   },
   {
     name: "Body Recomposition",
-    result: "Fat loss + strength gain · 10 months",
-    image: transform3,
-    before: 38,
+    result: "3 month transformation",
+    image: transform3Asset.url,
   },
 ];
 
@@ -208,7 +206,7 @@ function Index() {
         <HeroSection />
         <MomentumStrip />
         <ReceptionSection />
-        <FacilitiesGridSection />
+        <FacilitiesHeaderSection />
         <StrengthSection />
         <EquipmentSection />
         <SpinStudioSection />
@@ -217,9 +215,10 @@ function Index() {
         <YogaSection />
         <PlanningSection />
         <TransformationSection />
+        <TrainersSection />
         <SocialSection />
-        <LifestyleSection />
         <TestimonialsSection />
+        <EnquirySection />
         <FinalCtaSection />
         <Location />
       </main>
@@ -364,44 +363,20 @@ function ReceptionSection() {
   );
 }
 
-function FacilitiesGridSection() {
+function FacilitiesHeaderSection() {
   return (
-    <section id="facilities" className="bg-elevated py-24 md:py-32">
+    <section id="facilities" className="bg-elevated py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <Eyebrow>Facilities Overview</Eyebrow>
             <SectionTitle>
-              Eight Signature <span className="text-primary">Experiences</span>
+              World-Class <span className="text-primary">Facilities</span>
             </SectionTitle>
           </div>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-right">
             Every space inside Goodlife Fitness Club is designed as a premium experience — from high-energy performance floors to calmer wellness zones and social corners members actually want to share.
           </p>
-        </div>
-
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {facilities.map(({ title, copy, image, icon: Icon }, index) => (
-            <motion.article
-              key={title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.55, delay: (index % 4) * 0.08 }}
-              className="group relative aspect-[4/5] overflow-hidden rounded-[8px] border border-border/70"
-            >
-              <img src={image} alt={title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,6,8,0.08)_0%,rgba(6,6,8,0.26)_38%,rgba(6,6,8,0.95)_100%)]" />
-              <div className="absolute inset-0 rounded-[8px] border border-primary/0 transition-colors duration-500 group-hover:border-primary/40" />
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <div className="mb-4 grid size-11 place-items-center rounded-full border border-primary/30 bg-background/35 text-primary backdrop-blur-xl">
-                  <Icon className="size-5" />
-                </div>
-                <h3 className="text-2xl uppercase leading-none text-foreground">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/72">{copy}</p>
-              </div>
-            </motion.article>
-          ))}
         </div>
       </div>
     </section>
@@ -593,9 +568,29 @@ function TransformationSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {transformations.map((item) => (
-            <BeforeAfterCard key={item.name} {...item} />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {transformations.map((item, i) => (
+            <motion.article
+              key={item.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.55, delay: i * 0.08 }}
+              className="premium-panel overflow-hidden p-4"
+            >
+              <div className="relative overflow-hidden rounded-[8px] border border-border/70 bg-black">
+                <img src={item.image} alt={`${item.name} transformation at Goodlife Fitness Club`} loading="lazy" className="h-full w-full object-cover" />
+              </div>
+              <div className="mt-4 flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl uppercase text-foreground">{item.name}</h3>
+                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-primary">{item.result}</p>
+                </div>
+                <div className="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-primary">
+                  Real Progress
+                </div>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>
@@ -676,25 +671,40 @@ function SocialSection() {
   );
 }
 
-function LifestyleSection() {
+function TrainersSection() {
   return (
-    <section className="bg-background py-24 md:py-32">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-16">
-        <ImageFrame src={floralCornerAsset.url} alt="Premium floral selfie corner at Goodlife Fitness Club" />
-        <div>
-          <Eyebrow>Instagram Moments</Eyebrow>
-          <SectionTitle>
-            Fitness Meets <span className="text-gold">Lifestyle</span>
-          </SectionTitle>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Premium details shape the member experience beyond training itself. The floral selfie corner adds softness, aspiration and a luxury-club feel that makes the brand more memorable and more shareable.
-          </p>
-          <div className="mt-8 space-y-4">
-            <FeaturePill title="Shareability" text="Creates social-first moments that extend Goodlife beyond the gym floor." />
-            <FeaturePill title="Member Experience" text="Adds delight, atmosphere and a club-like premium finish." />
-            <FeaturePill title="Brand Perception" text="Signals lifestyle, care and attention to detail rather than basic utility." />
+    <section id="trainers" className="bg-background py-24 md:py-32">
+      <div className="mx-auto max-w-5xl px-6 text-center">
+        <Eyebrow centered>Meet Our Trainers</Eyebrow>
+        <SectionTitle>
+          Coached By <span className="text-primary">The Best</span>
+        </SectionTitle>
+
+        <motion.article
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="premium-panel mx-auto mt-14 max-w-xl px-8 py-10"
+        >
+          <div className="mx-auto size-40 overflow-hidden rounded-full border-2 border-primary/40 bg-elevated shadow-[0_0_60px_-10px_rgba(255,120,31,0.55)]">
+            <img
+              src={trainerRaghuImg}
+              alt="Raghu Sir — Owner and Head Trainer at Goodlife Fitness Club"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
           </div>
-        </div>
+          <h3 className="mt-6 text-3xl uppercase text-foreground md:text-4xl">Raghu Sir</h3>
+          <p className="mt-2 text-xs uppercase tracking-[0.28em] text-primary">
+            Owner & Head Trainer | Goodlife Fitness Club
+          </p>
+          <ul className="mt-6 space-y-2 text-sm leading-relaxed text-foreground/80">
+            <li>10+ Years Experience</li>
+            <li>Transformation Specialist</li>
+            <li>Personal Training Expert</li>
+          </ul>
+        </motion.article>
       </div>
     </section>
   );
@@ -832,52 +842,62 @@ function FeatureShowcase({
   );
 }
 
-function BeforeAfterCard({
-  name,
-  result,
-  image,
-  before,
-}: {
-  name: string;
-  result: string;
-  image: string;
-  before: number;
-}) {
-  const [position, setPosition] = useState(before);
+function EnquirySection() {
+  const goals = ["Weight Loss", "Muscle Gain", "General Fitness", "Personal Training", "Boxing", "Yoga"];
+  const slots = ["Morning (5AM–9AM)", "Afternoon (9AM–1PM)", "Evening (4PM–8PM)", "Night (8PM–11PM)"];
+  const [form, setForm] = useState({ name: "", phone: "", goal: goals[0], slot: slots[0], message: "" });
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const name = form.name.trim().slice(0, 100);
+    const phone = form.phone.trim().slice(0, 20);
+    if (!name || !phone) return;
+    const text = `Hi Goodlife Fitness Club,%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AGoal: ${encodeURIComponent(form.goal)}%0APreferred Slot: ${encodeURIComponent(form.slot)}%0AMessage: ${encodeURIComponent(form.message.trim().slice(0, 500) || "—")}%0A%0AI'd like to book a free trial / send an enquiry.`;
+    window.open(`https://wa.me/919325342686?text=${text}`, "_blank", "noopener");
+  }
+
+  const inputCls = "w-full rounded-[6px] border border-border/70 bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary/60 focus:outline-none focus:ring-1 focus:ring-primary/40";
 
   return (
-    <article className="premium-panel overflow-hidden p-4">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[8px] border border-border/70 bg-black">
-        <img src={image} alt={`${name} transformation before and after`} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${position}%` }}>
-          <img src={image} alt="" aria-hidden="true" className="h-full w-[100cqw] max-w-none object-cover grayscale contrast-125 brightness-75" />
+    <section id="enquiry" className="bg-background py-24 md:py-32">
+      <div className="mx-auto max-w-3xl px-6">
+        <div className="text-center">
+          <Eyebrow centered>Get Started</Eyebrow>
+          <SectionTitle>
+            Book A Free Trial / <span className="text-primary">Send Enquiry</span>
+          </SectionTitle>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            Share a few details — we'll respond on WhatsApp within minutes.
+          </p>
         </div>
-        <div className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.55)]" style={{ left: `${position}%` }} />
-        <div className="absolute left-3 top-3 rounded-full bg-background/82 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-foreground">Before</div>
-        <div className="absolute right-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-primary-foreground">After</div>
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/30 bg-black/50 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-white backdrop-blur-xl">
-          Drag slider
-        </div>
+
+        <motion.form
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          onSubmit={handleSubmit}
+          className="premium-panel mt-10 grid gap-4 p-6 md:p-8"
+        >
+          <div className="grid gap-4 md:grid-cols-2">
+            <input required maxLength={100} type="text" placeholder="Full Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputCls} />
+            <input required maxLength={20} type="tel" placeholder="Phone Number *" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputCls} />
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <select value={form.goal} onChange={(e) => setForm({ ...form, goal: e.target.value })} className={inputCls}>
+              {goals.map((g) => <option key={g} value={g}>{`Goal: ${g}`}</option>)}
+            </select>
+            <select value={form.slot} onChange={(e) => setForm({ ...form, slot: e.target.value })} className={inputCls}>
+              {slots.map((s) => <option key={s} value={s}>{`Slot: ${s}`}</option>)}
+            </select>
+          </div>
+          <textarea maxLength={500} rows={4} placeholder="Any specific queries or goals?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className={inputCls} />
+          <button type="submit" className="btn-premium justify-center">
+            <MessageCircle className="size-4" /> Send to WhatsApp
+          </button>
+        </motion.form>
       </div>
-      <input
-        aria-label={`${name} slider`}
-        type="range"
-        min={15}
-        max={85}
-        value={position}
-        onChange={(event) => setPosition(Number(event.target.value))}
-        className="mt-4 w-full accent-[oklch(0.76_0.18_55)]"
-      />
-      <div className="mt-4 flex items-start justify-between gap-4">
-        <div>
-          <h3 className="text-2xl uppercase text-foreground">{name}</h3>
-          <p className="mt-2 text-sm uppercase tracking-[0.22em] text-primary">{result}</p>
-        </div>
-        <div className="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-primary">
-          Real Progress
-        </div>
-      </div>
-    </article>
+    </section>
   );
 }
 
