@@ -842,52 +842,62 @@ function FeatureShowcase({
   );
 }
 
-function BeforeAfterCard({
-  name,
-  result,
-  image,
-  before,
-}: {
-  name: string;
-  result: string;
-  image: string;
-  before: number;
-}) {
-  const [position, setPosition] = useState(before);
+function EnquirySection() {
+  const goals = ["Weight Loss", "Muscle Gain", "General Fitness", "Personal Training", "Boxing", "Yoga"];
+  const slots = ["Morning (5AM–9AM)", "Afternoon (9AM–1PM)", "Evening (4PM–8PM)", "Night (8PM–11PM)"];
+  const [form, setForm] = useState({ name: "", phone: "", goal: goals[0], slot: slots[0], message: "" });
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const name = form.name.trim().slice(0, 100);
+    const phone = form.phone.trim().slice(0, 20);
+    if (!name || !phone) return;
+    const text = `Hi Goodlife Fitness Club,%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AGoal: ${encodeURIComponent(form.goal)}%0APreferred Slot: ${encodeURIComponent(form.slot)}%0AMessage: ${encodeURIComponent(form.message.trim().slice(0, 500) || "—")}%0A%0AI'd like to book a free trial / send an enquiry.`;
+    window.open(`https://wa.me/919325342686?text=${text}`, "_blank", "noopener");
+  }
+
+  const inputCls = "w-full rounded-[6px] border border-border/70 bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary/60 focus:outline-none focus:ring-1 focus:ring-primary/40";
 
   return (
-    <article className="premium-panel overflow-hidden p-4">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[8px] border border-border/70 bg-black">
-        <img src={image} alt={`${name} transformation before and after`} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${position}%` }}>
-          <img src={image} alt="" aria-hidden="true" className="h-full w-[100cqw] max-w-none object-cover grayscale contrast-125 brightness-75" />
+    <section id="enquiry" className="bg-background py-24 md:py-32">
+      <div className="mx-auto max-w-3xl px-6">
+        <div className="text-center">
+          <Eyebrow centered>Get Started</Eyebrow>
+          <SectionTitle>
+            Book A Free Trial / <span className="text-primary">Send Enquiry</span>
+          </SectionTitle>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            Share a few details — we'll respond on WhatsApp within minutes.
+          </p>
         </div>
-        <div className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.55)]" style={{ left: `${position}%` }} />
-        <div className="absolute left-3 top-3 rounded-full bg-background/82 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-foreground">Before</div>
-        <div className="absolute right-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-primary-foreground">After</div>
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/30 bg-black/50 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-white backdrop-blur-xl">
-          Drag slider
-        </div>
+
+        <motion.form
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          onSubmit={handleSubmit}
+          className="premium-panel mt-10 grid gap-4 p-6 md:p-8"
+        >
+          <div className="grid gap-4 md:grid-cols-2">
+            <input required maxLength={100} type="text" placeholder="Full Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputCls} />
+            <input required maxLength={20} type="tel" placeholder="Phone Number *" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputCls} />
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <select value={form.goal} onChange={(e) => setForm({ ...form, goal: e.target.value })} className={inputCls}>
+              {goals.map((g) => <option key={g} value={g}>{`Goal: ${g}`}</option>)}
+            </select>
+            <select value={form.slot} onChange={(e) => setForm({ ...form, slot: e.target.value })} className={inputCls}>
+              {slots.map((s) => <option key={s} value={s}>{`Slot: ${s}`}</option>)}
+            </select>
+          </div>
+          <textarea maxLength={500} rows={4} placeholder="Any specific queries or goals?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className={inputCls} />
+          <button type="submit" className="btn-premium justify-center">
+            <MessageCircle className="size-4" /> Send to WhatsApp
+          </button>
+        </motion.form>
       </div>
-      <input
-        aria-label={`${name} slider`}
-        type="range"
-        min={15}
-        max={85}
-        value={position}
-        onChange={(event) => setPosition(Number(event.target.value))}
-        className="mt-4 w-full accent-[oklch(0.76_0.18_55)]"
-      />
-      <div className="mt-4 flex items-start justify-between gap-4">
-        <div>
-          <h3 className="text-2xl uppercase text-foreground">{name}</h3>
-          <p className="mt-2 text-sm uppercase tracking-[0.22em] text-primary">{result}</p>
-        </div>
-        <div className="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-primary">
-          Real Progress
-        </div>
-      </div>
-    </article>
+    </section>
   );
 }
 
