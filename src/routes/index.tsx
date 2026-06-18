@@ -710,46 +710,30 @@ function TrainersSection() {
   const trainers = [
     {
       image: ownerAsset.url,
-      alt: "Owner portrait at Goodlife Fitness Club",
-      name: "Name Placeholder",
+      alt: "Raghu Sir, owner of Goodlife Fitness Club",
+      name: "Raghu Sir",
       role: "Owner",
     },
-    {
-      image: trainer1Asset.url,
-      alt: "Trainer portrait 1 at Goodlife Fitness Club",
-      name: "Name Placeholder",
-      role: "Trainer",
-    },
-    {
-      image: trainer2Asset.url,
-      alt: "Trainer portrait 2 at Goodlife Fitness Club",
-      name: "Name Placeholder",
-      role: "Trainer",
-    },
-    {
-      image: trainer3Asset.url,
-      alt: "Trainer portrait 3 at Goodlife Fitness Club",
-      name: "Name Placeholder",
-      role: "Trainer",
-    },
-    {
-      image: trainer4Asset.url,
-      alt: "Trainer portrait 4 at Goodlife Fitness Club",
-      name: "Name Placeholder",
-      role: "Trainer",
-    },
+    { image: trainer1Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
+    { image: trainer2Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
+    { image: trainer3Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
+    { image: trainer4Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
   ];
 
   return (
     <section id="trainers" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
-          <h2 className="text-balance text-[clamp(3rem,7vw,6.4rem)] uppercase leading-[0.86] text-foreground">
-            Our Trainers
+          <Eyebrow centered>The Coaching Team</Eyebrow>
+          <h2 className="mt-4 font-display text-balance text-[clamp(2.75rem,7vw,6.4rem)] uppercase leading-[0.86] text-foreground">
+            Our <span className="text-primary">Trainers</span>
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Certified coaches led by Raghu Sir — building champions through precision programming and relentless accountability.
+          </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {trainers.map((trainer, index) => (
             <motion.article
               key={`${trainer.role}-${index}`}
@@ -757,47 +741,61 @@ function TrainersSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: index * 0.06 }}
-              className="premium-panel group overflow-hidden p-4"
+              className="group relative overflow-hidden rounded-[10px] border border-border/60 bg-elevated p-3 transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.45)]"
             >
-              <div className="overflow-hidden rounded-[8px] border border-border/70 bg-elevated">
+              <div className="relative overflow-hidden rounded-[6px] bg-background">
                 <div className="aspect-[4/5] overflow-hidden">
                   <img
                     src={trainer.image}
                     alt={trainer.alt}
                     loading="lazy"
-                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
                   />
                 </div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-background/0 opacity-70" />
               </div>
-              <div className="mt-5 text-left">
-                <h3 className="text-2xl uppercase text-foreground">{trainer.name}</h3>
-                <p className="mt-2 text-xs uppercase tracking-[0.28em] text-primary">{trainer.role}</p>
+              <div className="mt-4 px-1 pb-1 text-center">
+                {trainer.name && (
+                  <h3 className="font-display text-lg uppercase leading-tight tracking-wide text-foreground sm:text-xl">
+                    {trainer.name}
+                  </h3>
+                )}
+                <p className={`${trainer.name ? "mt-1.5" : "mt-0"} text-[10px] uppercase tracking-[0.3em] text-primary sm:text-xs`}>
+                  {trainer.role}
+                </p>
               </div>
             </motion.article>
           ))}
-
-          <motion.article
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="premium-panel group overflow-hidden p-4 sm:col-span-2 xl:col-span-3"
-          >
-            <div className="overflow-hidden rounded-[8px] border border-dashed border-border/70 bg-elevated">
-              <div className="grid aspect-[16/7] place-items-center px-6 text-center">
-                <div>
-                  <div className="text-sm uppercase tracking-[0.28em] text-muted-foreground">Group Photo Placeholder</div>
-                  <div className="mt-3 text-base leading-relaxed text-foreground/72">
-                    Upload the team group photo to complete this banner.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-5 text-left sm:text-center">
-              <h3 className="text-2xl uppercase text-foreground md:text-3xl">Goodlife Fitness Family</h3>
-            </div>
-          </motion.article>
         </div>
+      </div>
+
+      <div className="mx-auto mt-24 max-w-[1400px] px-4 sm:mt-32 sm:px-6">
+        <div className="text-center">
+          <Eyebrow centered>One Team. One Family.</Eyebrow>
+          <h3 className="mt-4 font-display text-balance text-[clamp(2.25rem,6vw,5rem)] uppercase leading-[0.9] text-foreground">
+            Goodlife Fitness <span className="text-primary">Family</span>
+          </h3>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="relative mt-10 overflow-hidden rounded-[12px] border border-border/60 bg-elevated p-2 sm:p-3"
+        >
+          <div className="relative overflow-hidden rounded-[8px]">
+            <img
+              src={familyAsset.url}
+              alt="The Goodlife Fitness Club team — coaches and staff together"
+              loading="lazy"
+              className="h-auto w-full object-cover object-center"
+            />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-primary/10" />
+          </div>
+        </motion.div>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
+          More than coaches — a community. The faces behind every transformation, every PR, and every comeback at Goodlife Fitness Club.
+        </p>
       </div>
     </section>
   );
