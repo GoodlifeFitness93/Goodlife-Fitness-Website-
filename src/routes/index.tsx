@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { type ReactNode, useMemo, useState } from "react";
+import { type ReactNode, useState } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -34,11 +34,19 @@ import cardioZoneAsset from "@/assets/goodlife-cardio-zone.png.asset.json";
 import boxingArenaAsset from "@/assets/goodlife-boxing-arena.png.asset.json";
 import transformationLoungeAsset from "@/assets/goodlife-transformation-lounge.png.asset.json";
 import selfiePointAsset from "@/assets/goodlife-selfie-point.png.asset.json";
-import floralCornerAsset from "@/assets/goodlife-floral-selfie-corner.png.asset.json";
 import transform1Asset from "@/assets/transform1-new.png.asset.json";
 import transform2Asset from "@/assets/transform2-new.png.asset.json";
 import transform3Asset from "@/assets/transform3-new.png.asset.json";
-import trainerRaghuImg from "@/assets/trainer.jpg";
+import ownerAsset from "@/assets/goodlife-owner.png.asset.json";
+import trainer1Asset from "@/assets/goodlife-trainer-1.png.asset.json";
+import trainer2Asset from "@/assets/goodlife-trainer-2.png.asset.json";
+import trainer3Asset from "@/assets/goodlife-trainer-3.png.asset.json";
+import trainer4Asset from "@/assets/goodlife-trainer-4.png.asset.json";
+import salonAsset from "@/assets/goodlife-salon.png.asset.json";
+import steamAsset from "@/assets/goodlife-steam.png.asset.json";
+import spaAsset from "@/assets/goodlife-spa.png.asset.json";
+import bathAsset from "@/assets/goodlife-bath.png.asset.json";
+
 
 const WHATSAPP_URL =
   "https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans.";
@@ -213,10 +221,15 @@ function Index() {
         <CardioSection />
         <BoxingSection />
         <YogaSection />
+        <SalonSection />
+        <SteamSection />
+        <SpaSection />
+        <BathSection />
         <PlanningSection />
         <TransformationSection />
         <TrainersSection />
         <SocialSection />
+
         <TestimonialsSection />
         <EnquirySection />
         <FinalCtaSection />
@@ -527,6 +540,74 @@ function YogaSection() {
   );
 }
 
+function SalonSection() {
+  return (
+    <FeatureShowcase
+      eyebrow="Grooming Lounge"
+      title="Polished After Every Session"
+      description="The salon space extends the Goodlife experience beyond training. It gives members a clean, premium zone to reset, refresh and leave looking as sharp as they feel."
+      bullets={[
+        "A dedicated grooming corner with premium lighting and mirror detailing",
+        "Ideal for post-workout touch-ups before work, events or social plans",
+        "Designed to make recovery and presentation feel equally elevated",
+      ]}
+      image={salonAsset.url}
+      alt="Premium salon and grooming area at Goodlife Fitness Club"
+    />
+  );
+}
+
+function SteamSection() {
+  return (
+    <FeatureShowcase
+      eyebrow="Heat Recovery"
+      title="Recover Deeper. Return Stronger."
+      description="The steam area is built for restoration after hard sessions. Warm tones, stone finishes and dense steam create a luxury recovery ritual that helps the body unwind and recharge."
+      bullets={[
+        "A premium steam environment for post-workout decompression",
+        "Supports relaxation, circulation and full-body reset",
+        "Adds a high-end recovery layer rarely found in local fitness clubs",
+      ]}
+      image={steamAsset.url}
+      alt="Steam recovery room at Goodlife Fitness Club"
+    />
+  );
+}
+
+function SpaSection() {
+  return (
+    <FeatureShowcase
+      eyebrow="Recovery Suite"
+      title="Luxury Recovery In Quiet Focus"
+      description="The spa room brings a calmer rhythm into the club journey. It is a refined space where members can slow down, release tension and pair performance with premium self-care."
+      bullets={[
+        "Private spa setting with a clean, modern luxury finish",
+        "Built for deeper recovery after intense strength or cardio sessions",
+        "Balances the club's high-energy floors with a more restorative experience",
+      ]}
+      image={spaAsset.url}
+      alt="Luxury spa room at Goodlife Fitness Club"
+    />
+  );
+}
+
+function BathSection() {
+  return (
+    <FeatureShowcase
+      eyebrow="Refresh Zone"
+      title="Clean Finish. Premium Comfort."
+      description="The bath area completes the Goodlife experience with hospitality-grade detailing and a polished finish. It gives members a high-quality place to reset before stepping back into the day."
+      bullets={[
+        "Premium shower area with refined stone surfaces and warm lighting",
+        "Built for comfort, privacy and a smoother post-training routine",
+        "Turns a basic utility into a premium member experience",
+      ]}
+      image={bathAsset.url}
+      alt="Premium bath and shower area at Goodlife Fitness Club"
+    />
+  );
+}
+
 function PlanningSection() {
   return (
     <section className="bg-elevated py-24 md:py-32" id="planning">
@@ -551,6 +632,7 @@ function PlanningSection() {
     </section>
   );
 }
+
 
 function TransformationSection() {
   return (
@@ -599,15 +681,6 @@ function TransformationSection() {
 }
 
 function SocialSection() {
-  const stats = useMemo(
-    () => [
-      { icon: HeartPulse, value: "63.5M", label: "Likes" },
-      { icon: MessageCircle, value: "2.8K", label: "Comments" },
-      { icon: ChartColumn, value: "1.8M", label: "Shares" },
-    ],
-    [],
-  );
-
   return (
     <section className="bg-elevated py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
@@ -626,89 +699,109 @@ function SocialSection() {
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="premium-panel overflow-hidden p-4 md:p-5"
-        >
-          <div className="rounded-[8px] border border-border/70 bg-[#f7f4ef] p-4 text-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.35)] md:p-5">
-            <div className="flex items-center justify-between text-sm font-medium">
-              <span>Instagram</span>
-              <Instagram className="size-4" />
-            </div>
-            <div className="mt-4 flex items-center gap-3">
-              <div className="grid size-10 place-items-center rounded-full bg-black text-sm font-semibold text-white">GL</div>
-              <div>
-                <div className="flex items-center gap-2 text-sm font-semibold">
-                  goodlifefitness_
-                  <span className="inline-flex rounded-full bg-[#0095f6] px-1.5 py-0.5 text-[10px] text-white">✓</span>
-                </div>
-                <div className="text-sm text-[#444]">GoodLife Fitness</div>
-              </div>
-            </div>
-            <div className="mt-4 overflow-hidden rounded-[8px] bg-black">
-              <img src={selfiePointAsset.url} alt="Instagram selfie point at Goodlife Fitness Club" loading="lazy" className="w-full object-cover" />
-            </div>
-            <div className="mt-4 grid grid-cols-3 gap-3">
-              {stats.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="rounded-[8px] bg-black/5 p-3">
-                  <div className="flex items-center gap-2 text-sm font-semibold">
-                    <Icon className="size-4" /> {value}
-                  </div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.22em] text-[#666]">{label}</div>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-base leading-relaxed">
-              Stronger Every Day. <span className="text-[#0077cc]">#GoodLifeFitness</span>
-            </p>
-          </div>
-        </motion.div>
+        <ImageFrame src={selfiePointAsset.url} alt="Instagram selfie point at Goodlife Fitness Club" />
       </div>
     </section>
   );
 }
 
 function TrainersSection() {
+  const trainers = [
+    {
+      image: ownerAsset.url,
+      alt: "Owner portrait at Goodlife Fitness Club",
+      name: "Name Placeholder",
+      role: "Owner",
+    },
+    {
+      image: trainer1Asset.url,
+      alt: "Trainer portrait 1 at Goodlife Fitness Club",
+      name: "Name Placeholder",
+      role: "Trainer",
+    },
+    {
+      image: trainer2Asset.url,
+      alt: "Trainer portrait 2 at Goodlife Fitness Club",
+      name: "Name Placeholder",
+      role: "Trainer",
+    },
+    {
+      image: trainer3Asset.url,
+      alt: "Trainer portrait 3 at Goodlife Fitness Club",
+      name: "Name Placeholder",
+      role: "Trainer",
+    },
+    {
+      image: trainer4Asset.url,
+      alt: "Trainer portrait 4 at Goodlife Fitness Club",
+      name: "Name Placeholder",
+      role: "Trainer",
+    },
+  ];
+
   return (
     <section id="trainers" className="bg-background py-24 md:py-32">
-      <div className="mx-auto max-w-5xl px-6 text-center">
-        <Eyebrow centered>Meet Our Trainers</Eyebrow>
-        <SectionTitle>
-          Coached By <span className="text-primary">The Best</span>
-        </SectionTitle>
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="text-center">
+          <h2 className="text-balance text-[clamp(3rem,7vw,6.4rem)] uppercase leading-[0.86] text-foreground">
+            Our Trainers
+          </h2>
+        </div>
 
-        <motion.article
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-          className="premium-panel mx-auto mt-14 max-w-xl px-8 py-10"
-        >
-          <div className="mx-auto size-40 overflow-hidden rounded-full border-2 border-primary/40 bg-elevated shadow-[0_0_60px_-10px_rgba(255,120,31,0.55)]">
-            <img
-              src={trainerRaghuImg}
-              alt="Raghu Sir — Owner and Head Trainer at Goodlife Fitness Club"
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <h3 className="mt-6 text-3xl uppercase text-foreground md:text-4xl">Raghu Sir</h3>
-          <p className="mt-2 text-xs uppercase tracking-[0.28em] text-primary">
-            Owner & Head Trainer | Goodlife Fitness Club
-          </p>
-          <ul className="mt-6 space-y-2 text-sm leading-relaxed text-foreground/80">
-            <li>10+ Years Experience</li>
-            <li>Transformation Specialist</li>
-            <li>Personal Training Expert</li>
-          </ul>
-        </motion.article>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {trainers.map((trainer, index) => (
+            <motion.article
+              key={`${trainer.role}-${index}`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: index * 0.06 }}
+              className="premium-panel group overflow-hidden p-4"
+            >
+              <div className="overflow-hidden rounded-[8px] border border-border/70 bg-elevated">
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src={trainer.image}
+                    alt={trainer.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+              <div className="mt-5 text-left">
+                <h3 className="text-2xl uppercase text-foreground">{trainer.name}</h3>
+                <p className="mt-2 text-xs uppercase tracking-[0.28em] text-primary">{trainer.role}</p>
+              </div>
+            </motion.article>
+          ))}
+
+          <motion.article
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="premium-panel group overflow-hidden p-4 sm:col-span-2 xl:col-span-3"
+          >
+            <div className="overflow-hidden rounded-[8px] border border-dashed border-border/70 bg-elevated">
+              <div className="grid aspect-[16/7] place-items-center px-6 text-center">
+                <div>
+                  <div className="text-sm uppercase tracking-[0.28em] text-muted-foreground">Group Photo Placeholder</div>
+                  <div className="mt-3 text-base leading-relaxed text-foreground/72">
+                    Upload the team group photo to complete this banner.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-5 text-left sm:text-center">
+              <h3 className="text-2xl uppercase text-foreground md:text-3xl">Goodlife Fitness Family</h3>
+            </div>
+          </motion.article>
+        </div>
       </div>
     </section>
   );
 }
+
 
 function TestimonialsSection() {
   return (
