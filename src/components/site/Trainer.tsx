@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import trainerImg from "@/assets/trainer.jpg";
+import trainerImg from "@/assets/Owner.png";
 import { Trophy, Target, Flame, Users } from "lucide-react";
 
 const traits = [

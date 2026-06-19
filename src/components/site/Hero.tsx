@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-gym.jpg";
+import heroImg from "@/assets/Entrance_Waiting area.png";
 import { Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
