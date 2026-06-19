@@ -225,6 +225,7 @@ function Index() {
         <CardioSection />
         <BoxingSection />
         <YogaSection />
+        <LockerSection />
         <SalonSection />
         <SteamSection />
         <SpaSection />
