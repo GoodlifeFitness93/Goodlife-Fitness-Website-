@@ -39,7 +39,7 @@ import transform2Asset from "@/assets/transform2-new.png.asset.json";
 import transform3Asset from "@/assets/transform3-new.png.asset.json";
 import ownerAsset from "@/assets/goodlife-owner.png.asset.json";
 import trainer1Asset from "@/assets/goodlife-trainer-1.png.asset.json";
-import trainer2Asset from "@/assets/goodlife-trainer-2.png.asset.json";
+
 import trainer3Asset from "@/assets/goodlife-trainer-3.png.asset.json";
 import trainer4Asset from "@/assets/goodlife-trainer-4.png.asset.json";
 import familyAsset from "@/assets/goodlife-fitness-family.png.asset.json";
