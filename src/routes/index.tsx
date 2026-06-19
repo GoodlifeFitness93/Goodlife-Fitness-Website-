@@ -728,18 +728,57 @@ function SocialSection() {
 }
 
 function TrainersSection() {
+  const owner = {
+    image: ownerAsset.url,
+    alt: "Raghu Sir, owner of Goodlife Fitness Club",
+    name: "Raghu Sir",
+    role: "Owner",
+  };
+  const management = [
+    { image: trainer2NewAsset.url, alt: "Head Manager at Goodlife Fitness Club", name: "", role: "Head Manager" },
+    { image: trainer1Asset.url, alt: "Head Manager at Goodlife Fitness Club", name: "", role: "Head Manager" },
+  ];
   const trainers = [
-    {
-      image: ownerAsset.url,
-      alt: "Raghu Sir, owner of Goodlife Fitness Club",
-      name: "Raghu Sir",
-      role: "Owner",
-    },
-    { image: trainer1Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
-    { image: trainer2Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
     { image: trainer3Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
     { image: trainer4Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
+    { image: trainer5NewAsset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
   ];
+
+  const cardCls =
+    "group relative overflow-hidden rounded-[10px] border border-border/60 bg-elevated p-3 transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.45)]";
+
+  const renderCard = (person: { image: string; alt: string; name: string; role: string }, index: number, prominent?: boolean) => (
+    <motion.article
+      key={`${person.role}-${index}`}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay: index * 0.06 }}
+      className={cardCls}
+    >
+      <div className="relative overflow-hidden rounded-[6px] bg-background">
+        <div className="aspect-[4/5] overflow-hidden">
+          <img
+            src={person.image}
+            alt={person.alt}
+            loading="lazy"
+            className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+          />
+        </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-background/0 opacity-70" />
+      </div>
+      <div className="mt-4 px-1 pb-1 text-center">
+        {person.name && (
+          <h3 className={`font-display uppercase leading-tight tracking-wide text-foreground ${prominent ? "text-2xl sm:text-3xl md:text-4xl" : "text-lg sm:text-xl"}`}>
+            {person.name}
+          </h3>
+        )}
+        <p className={`${person.name ? "mt-1.5" : "mt-0"} uppercase tracking-[0.3em] text-primary ${prominent ? "text-xs sm:text-sm" : "text-[10px] sm:text-xs"}`}>
+          {person.role}
+        </p>
+      </div>
+    </motion.article>
+  );
 
   return (
     <section id="trainers" className="bg-background py-24 md:py-32">
@@ -754,39 +793,21 @@ function TrainersSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {trainers.map((trainer, index) => (
-            <motion.article
-              key={`${trainer.role}-${index}`}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: index * 0.06 }}
-              className="group relative overflow-hidden rounded-[10px] border border-border/60 bg-elevated p-3 transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.45)]"
-            >
-              <div className="relative overflow-hidden rounded-[6px] bg-background">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
-                    src={trainer.image}
-                    alt={trainer.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
-                  />
-                </div>
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-background/0 opacity-70" />
-              </div>
-              <div className="mt-4 px-1 pb-1 text-center">
-                {trainer.name && (
-                  <h3 className="font-display text-lg uppercase leading-tight tracking-wide text-foreground sm:text-xl">
-                    {trainer.name}
-                  </h3>
-                )}
-                <p className={`${trainer.name ? "mt-1.5" : "mt-0"} text-[10px] uppercase tracking-[0.3em] text-primary sm:text-xs`}>
-                  {trainer.role}
-                </p>
-              </div>
-            </motion.article>
-          ))}
+        {/* Row 1 — Owner */}
+        <div className="mt-14 flex justify-center">
+          <div className="w-full max-w-sm sm:max-w-md">
+            {renderCard(owner, 0, true)}
+          </div>
+        </div>
+
+        {/* Row 2 — Management */}
+        <div className="mt-8 grid grid-cols-2 gap-5 sm:gap-6 mx-auto max-w-3xl">
+          {management.map((m, i) => renderCard(m, i))}
+        </div>
+
+        {/* Row 3 — Trainers */}
+        <div className="mt-8 grid grid-cols-2 gap-5 sm:gap-6 sm:grid-cols-3 mx-auto max-w-5xl">
+          {trainers.map((t, i) => renderCard(t, i))}
         </div>
       </div>
 
