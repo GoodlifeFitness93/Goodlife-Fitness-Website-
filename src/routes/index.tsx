@@ -977,7 +977,7 @@ function EnquirySection() {
         <div className="text-center">
           <Eyebrow centered>Get Started</Eyebrow>
           <SectionTitle>
-            Book A Free Trial / <span className="text-primary">Send Enquiry</span>
+            Send <span className="text-primary">Enquiry</span>
           </SectionTitle>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
             Share a few details — we'll respond on WhatsApp within minutes.
