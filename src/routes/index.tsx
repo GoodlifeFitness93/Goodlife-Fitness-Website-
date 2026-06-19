@@ -545,6 +545,23 @@ function YogaSection() {
   );
 }
 
+function LockerSection() {
+  return (
+    <FeatureShowcase
+      eyebrow="Locker Facility"
+      title="Secure Storage. Effortless Comfort."
+      description="Clean, organised lockers give every member a safe, private space to store belongings before and after training — one more detail that makes Goodlife feel like a premium club, not just a gym."
+      bullets={[
+        "Spacious lockers with secure locking system",
+        "Dedicated space to change, store and reset before training",
+        "Designed for cleanliness, privacy and everyday convenience",
+      ]}
+      image={lockerAsset.url}
+      alt="Locker room at Goodlife Fitness Club"
+    />
+  );
+}
+
 function SalonSection() {
   return (
     <FeatureShowcase
