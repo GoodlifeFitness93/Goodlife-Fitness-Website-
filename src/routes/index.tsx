@@ -43,10 +43,13 @@ import trainer2Asset from "@/assets/goodlife-trainer-2.png.asset.json";
 import trainer3Asset from "@/assets/goodlife-trainer-3.png.asset.json";
 import trainer4Asset from "@/assets/goodlife-trainer-4.png.asset.json";
 import familyAsset from "@/assets/goodlife-fitness-family.png.asset.json";
-import salonAsset from "@/assets/goodlife-salon.png.asset.json";
+import salonAsset from "@/assets/goodlife-salon-new.png.asset.json";
 import steamAsset from "@/assets/goodlife-steam.png.asset.json";
 import spaAsset from "@/assets/goodlife-spa.png.asset.json";
 import bathAsset from "@/assets/goodlife-bath.png.asset.json";
+import lockerAsset from "@/assets/goodlife-locker.png.asset.json";
+import trainer2NewAsset from "@/assets/goodlife-trainer-2-new.png.asset.json";
+import trainer5NewAsset from "@/assets/goodlife-trainer-5-new.png.asset.json";
 
 
 const WHATSAPP_URL =
