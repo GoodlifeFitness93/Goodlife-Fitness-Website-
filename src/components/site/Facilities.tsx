@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { Dumbbell, HeartPulse, Weight, Flower2, Sparkles, Waves, Droplets, Swords, Camera } from "lucide-react";
 import { SectionHeader } from "./Section";
-import equipment from "@/assets/strength training.png";
-import cardio from "@/assets/cardio-zone.png";
-import weights from "@/assets/Weight training area.png";
-import yoga from "@/assets/yoga-zone.png";
-import spa from "@/assets/Spa.png";
-import steam from "@/assets/Steam.png";
-import bath from "@/assets/Bath.png";
-import boxing from "@/assets/Boxing Area.png";
-import selfie from "@/assets/Selfie Point.png";
+import equipment from "@/assets/strength training.webp";
+import cardio from "@/assets/cardio-zone.webp";
+import weights from "@/assets/Weight training area.webp";
+import yoga from "@/assets/yoga-zone.webp";
+import spa from "@/assets/Spa.webp";
+import steam from "@/assets/Steam.webp";
+import bath from "@/assets/Bath.webp";
+import boxing from "@/assets/Boxing Area.webp";
+import selfie from "@/assets/Selfie Point.webp";
 
 const facilities = [
   { icon: Dumbbell, img: equipment, title: "Advanced Equipment", desc: "Latest plate-loaded & functional rigs." },

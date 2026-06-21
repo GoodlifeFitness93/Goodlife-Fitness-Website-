@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "./Section";
-import t1 from "@/assets/gym transformation 1.png";
-import t2 from "@/assets/gym transformation 2.png";
-import t3 from "@/assets/gym transformation 3.png";
+import t1 from "@/assets/gym transformation 1.webp";
+import t2 from "@/assets/gym transformation 2.webp";
+import t3 from "@/assets/gym transformation 3.webp";
 
 const cards = [
   { img: t1, name: "Rahul S.", meta: "12 kg lean gain · 6 months", quote: "Goodlife rebuilt me from the inside out." },

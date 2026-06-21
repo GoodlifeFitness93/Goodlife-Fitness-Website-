@@ -40,7 +40,7 @@ export function Location() {
           <iframe
             title="Goodlife Fitness Club location"
             src="https://maps.google.com/maps?q=Goodlife+Fitness+Club+Sai+Icon+near+Ambassador+Hotel+Dharamsi+Lane+Murarji+Peth+Solapur+Maharashtra+413001&output=embed"
-            className="w-full h-full min-h-[400px] grayscale contrast-125"
+            className="w-full h-full min-h-[400px]"
             loading="lazy"
           />
         </div>

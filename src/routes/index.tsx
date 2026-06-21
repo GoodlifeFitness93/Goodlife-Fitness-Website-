@@ -27,30 +27,33 @@ import { Footer } from "@/components/site/Footer";
 import { StickyMobile } from "@/components/site/StickyMobile";
 import { Location } from "@/components/site/Location";
 
-import receptionAssetImg from "@/assets/Entrance_Waiting area.png";
-import strengthZoneAssetImg from "@/assets/Weight training area.png";
-import machineZoneAssetImg from "@/assets/strength training.png";
-import yogaStudioAssetImg from "@/assets/yoga-zone.png";
-import spinStudioAssetImg from "@/assets/Spining bicycle.png";
-import cardioZoneAssetImg from "@/assets/cardio-zone.png";
-import boxingArenaAssetImg from "@/assets/Boxing Area.png";
-import transformationLoungeAssetImg from "@/assets/Office.png";
-import selfiePointAssetImg from "@/assets/Selfie Point.png";
-import transform1AssetImg from "@/assets/gym transformation 1.png";
-import transform2AssetImg from "@/assets/gym transformation 2.png";
-import transform3AssetImg from "@/assets/gym transformation 3.png";
-import ownerAssetImg from "@/assets/Owner.png";
+import receptionAssetImg from "@/assets/Entrance_Waiting area.webp";
+import strengthZoneAssetImg from "@/assets/Weight training area.webp";
+import machineZoneAssetImg from "@/assets/strength training.webp";
+import yogaStudioAssetImg from "@/assets/yoga-zone.webp";
+import spinStudioAssetImg from "@/assets/Spining bicycle.webp";
+import cardioZoneAssetImg from "@/assets/cardio-zone.webp";
+import boxingArenaAssetImg from "@/assets/Boxing Area.webp";
+import transformationLoungeAssetImg from "@/assets/Office.webp";
+import selfiePointAssetImg from "@/assets/Selfie Point.webp";
+import transform1AssetImg from "@/assets/gym transformation 1.webp";
+import transform2AssetImg from "@/assets/gym transformation 2.webp";
+import transform3AssetImg from "@/assets/gym transformation 3.webp";
+import ownerAssetImg from "@/assets/Owner.webp";
 import trainer1AssetImg from "@/assets/Head manager.jpeg";
-import trainer2NewAssetImg from "@/assets/Floor manager.png";
-import trainer3AssetImg from "@/assets/trainer 3.png";
-import trainer4AssetImg from "@/assets/trainer 4.png";
+import trainer2NewAssetImg from "@/assets/Floor manager.webp";
+import trainer3AssetImg from "@/assets/trainer 3.webp";
+import trainer4AssetImg from "@/assets/trainer 4.webp";
 import trainer5NewAssetImg from "@/assets/goodlife-trainer-5-new.jpeg";
-import familyAssetImg from "@/assets/Goodlife Fitness Team.png";
+import trainerNewAssetImg from "@/assets/goodlife-trainer-new.png";
+import familyAssetImg from "@/assets/Goodlife Fitness Team.webp";
 import salonAssetImg from "@/assets/goodlife-salon.png.jpeg";
-import steamAssetImg from "@/assets/Steam.png";
-import spaAssetImg from "@/assets/Spa.png";
-import bathAssetImg from "@/assets/Bath.png";
+import steamAssetImg from "@/assets/Steam.webp";
+import spaAssetImg from "@/assets/Spa.webp";
+import bathAssetImg from "@/assets/Bath.webp";
 import lockerAssetImg from "@/assets/goodlife-locker.png.jpeg";
+import { getUnusedReviewFn, markReviewUsedFn } from "../lib/api/reviews.functions";
+
 
 const receptionAsset = { url: receptionAssetImg };
 const strengthZoneAsset = { url: strengthZoneAssetImg };
@@ -76,6 +79,7 @@ const bathAsset = { url: bathAssetImg };
 const lockerAsset = { url: lockerAssetImg };
 const trainer2NewAsset = { url: trainer2NewAssetImg };
 const trainer5NewAsset = { url: trainer5NewAssetImg };
+const trainerNewAsset = { url: trainerNewAssetImg };
 
 
 const WHATSAPP_URL =
@@ -449,6 +453,7 @@ function StrengthSection() {
 function EquipmentSection() {
   return (
     <FeatureShowcase
+      id="equipment"
       eyebrow="Advanced Equipment"
       title="World-Class Training Equipment"
       description="Commercial-grade selectorized equipment helps members isolate muscle groups, train with better mechanics and progress with confidence. This is where structured strength training becomes more intelligent and repeatable."
@@ -466,7 +471,7 @@ function EquipmentSection() {
 
 function SpinStudioSection() {
   return (
-    <section className="relative overflow-hidden bg-elevated py-24 md:py-32">
+    <section id="spin-studio" className="relative overflow-hidden bg-elevated py-24 md:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(42,160,255,0.2),transparent_22%),radial-gradient(circle_at_88%_14%,rgba(255,58,70,0.16),transparent_24%)]" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16">
         <div>
@@ -512,6 +517,7 @@ function SpinStudioSection() {
 function CardioSection() {
   return (
     <FeatureShowcase
+      id="cardio"
       eyebrow="Cardio Training"
       title="Boost Endurance. Burn Fat."
       description="A premium cardio zone with multiple treadmills and performance displays gives members a dedicated environment for fat loss, conditioning and stamina-building."
@@ -530,6 +536,7 @@ function CardioSection() {
 function BoxingSection() {
   return (
     <FeatureShowcase
+      id="boxing"
       eyebrow="Combat Fitness"
       title="Unleash Your Fighter Spirit"
       description="The boxing arena adds aggression, speed and athletic discipline to the Goodlife experience. It is a clean, focused space for bag work, conditioning drills and explosive training."
@@ -548,7 +555,7 @@ function BoxingSection() {
 
 function YogaSection() {
   return (
-    <section className="relative overflow-hidden bg-background py-24 md:py-32">
+    <section id="yoga" className="relative overflow-hidden bg-background py-24 md:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,176,73,0.12),transparent_22%)]" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
         <ImageFrame src={yogaStudioAsset.url} alt="Premium yoga studio at Goodlife Fitness Club in Solapur" />
@@ -574,6 +581,7 @@ function YogaSection() {
 function LockerSection() {
   return (
     <FeatureShowcase
+      id="lockers"
       eyebrow="Locker Facility"
       title="Secure Storage. Effortless Comfort."
       description="Clean, organised lockers give every member a safe, private space to store belongings before and after training — one more detail that makes Goodlife feel like a premium club, not just a gym."
@@ -591,6 +599,7 @@ function LockerSection() {
 function SalonSection() {
   return (
     <FeatureShowcase
+      id="salon"
       eyebrow="Grooming Lounge"
       title="Polished After Every Session"
       description="The salon space extends the Goodlife experience beyond training. It gives members a clean, premium zone to reset, refresh and leave looking as sharp as they feel."
@@ -608,6 +617,7 @@ function SalonSection() {
 function SteamSection() {
   return (
     <FeatureShowcase
+      id="steam"
       eyebrow="Heat Recovery"
       title="Recover Deeper. Return Stronger."
       description="The steam area is built for restoration after hard sessions. Warm tones, stone finishes and dense steam create a luxury recovery ritual that helps the body unwind and recharge."
@@ -625,6 +635,7 @@ function SteamSection() {
 function SpaSection() {
   return (
     <FeatureShowcase
+      id="spa"
       eyebrow="Recovery Suite"
       title="Luxury Recovery In Quiet Focus"
       description="The spa room brings a calmer rhythm into the club journey. It is a refined space where members can slow down, release tension and pair performance with premium self-care."
@@ -642,6 +653,7 @@ function SpaSection() {
 function BathSection() {
   return (
     <FeatureShowcase
+      id="bath"
       eyebrow="Refresh Zone"
       title="Clean Finish. Premium Comfort."
       description="The bath area completes the Goodlife experience with hospitality-grade detailing and a polished finish. It gives members a high-quality place to reset before stepping back into the day."
@@ -730,7 +742,7 @@ function TransformationSection() {
 
 function SocialSection() {
   return (
-    <section className="bg-elevated py-24 md:py-32">
+    <section id="selfie-point" className="bg-elevated py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <div>
           <Eyebrow>Social Proof</Eyebrow>
@@ -768,6 +780,7 @@ function TrainersSection() {
     { image: trainer3Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
     { image: trainer4Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
     { image: trainer5NewAsset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
+    { image: trainerNewAsset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
   ];
 
   const cardCls =
@@ -832,7 +845,7 @@ function TrainersSection() {
         </div>
 
         {/* Row 3 — Trainers */}
-        <div className="mt-8 grid grid-cols-2 gap-5 sm:gap-6 sm:grid-cols-3 mx-auto max-w-5xl">
+        <div className="mt-8 grid grid-cols-2 gap-5 sm:gap-6 mx-auto max-w-5xl">
           {trainers.map((t, i) => renderCard(t, i))}
         </div>
       </div>
@@ -870,238 +883,80 @@ function TrainersSection() {
 }
 
 
-const TONES = {
-  1: "clearly disappointed but polite and fair — gym looks impressive but personal experience didn't match the setup",
-  2: "mixed feelings — some positives but overall underwhelmed, measured and honest",
-  3: "genuinely positive but balanced — enjoyed the visit, one thing could be even better",
-  4: "enthusiastic and warm — two or three things genuinely stood out, feels like a real recommendation",
-  5: "absolutely thrilled — passionate, specific, personal tone — best gym they've ever been to"
-};
-
-const ASPECTS = [
-  ["boxing arena", "steam room", "trainers"],
-  ["spa", "advanced machines", "owner"],
-  ["yoga studio", "cardio zone", "staff"],
-  ["salon", "spin studio", "entrance"],
-  ["strength floor", "bath area", "cleanliness"],
-  ["equipment variety", "ambience", "transformations"],
-  ["steam room", "owner", "yoga studio"],
-  ["boxing arena", "spa", "staff"],
-  ["trainers", "spin studio", "cleanliness"],
-  ["strength floor", "salon", "entrance"],
-  ["cardio zone", "advanced machines", "ambience"],
-  ["steam room", "spa", "trainers"],
-  ["boxing arena", "yoga studio", "owner"],
-  ["salon", "bath area", "staff"],
-  ["spin studio", "equipment variety", "cleanliness"]
-];
-
-const STYLES = [
-  "opens with an observation about the gym space itself",
-  "opens with how it felt walking in for the first time",
-  "opens with what surprised them most about this gym",
-  "opens with a comparison to other gyms they've tried",
-  "opens with what they came for and what they found",
-  "opens with a recommendation to someone thinking of joining",
-  "opens with the recovery facilities, then the workout",
-  "opens with the people — trainers, staff, or owner",
-  "opens with the machines and how it compares",
-  "opens with the vibe and atmosphere"
-];
-
-const OPENINGS: Record<number, string[]> = {
-  1: [
-    "The physical size of this Solapur gym is {massive|huge|very grand}, but the actual experience is {lacking|quite poor|disappointing} for members.",
-    "Walking into this {highly hyped|fancy|grand} gym for the first time, I {expected a lot|felt excited} but got a {bad|rough|disappointing} experience.",
-    "What {surprised|shocked} me most was how {poorly|badly} things are managed despite such a {grand|large} setup.",
-    "Compared to other local gyms in Solapur, the fees here are {too high|premium} for such {bad|mediocre} service.",
-    "{I joined this club|I signed up here|I came to this gym} expecting a {highly professional training setup|clean and organized environment|premium workout space}, but I {was met with terrible management|encountered constant operational issues|faced nothing but disappointment} instead.",
-    "If you are thinking of joining, {think twice|be careful} because the flashy looks are {misleading|just a show}.",
-    "The recovery area looks {good|fancy} on paper, but the actual workout environment is {really chaotic|poorly managed}.",
-    "The trainers and staff here {need proper training|seem very indifferent} and {do not help|are not attentive} at all.",
-    "They have a lot of machines on the floor, but {half of them|many} are {crowded|poorly maintained}.",
-    "The vibe here is {quite chaotic|very off|noisy} and not suitable for a {peaceful|good} training session."
-  ],
-  2: [
-    "The gym space in Solapur is {definitely big|quite spacious}, but the actual daily management is {just average|pretty basic} and needs a lot of work.",
-    "Entering the gym, the setup {looks impressive|feels premium}, but the service is {nothing special|quite mediocre} for a newcomer.",
-    "What surprised me was that despite {so many machines|such a big area}, the trainers {don't pay attention|seem distracted} to average members.",
-    "Having tried other gyms in the area, this place has {better equipment|nicer interiors} but {lacks the personal touch|service is slow}.",
-    "I joined expecting a {premium|high class} fitness experience, but it turned out to be {just ordinary|quite normal} on the floor.",
-    "Think carefully before signing up; it is {okay|decent} but {not worth the hype|nothing extraordinary} in the long run.",
-    "While the spa and changing rooms are {nice|decently clean}, the main workout floor gets {too crowded|very messy} during peak times.",
-    "The staff and owner are {polite|decent}, but the trainers {hardly guide you|mostly focus on personal clients} unless you pay extra.",
-    "The machine selection is {good|decent}, but many require {maintenance|quick repairs} and parts are delayed.",
-    "The atmosphere is {fairly active|okay}, but it feels {more like a business|a bit commercial} than a fitness community."
-  ],
-  3: [
-    "This Solapur facility is {spacious|very large} and well-equipped, though some minor things {need improvement|can be better} to match the premium marketing.",
-    "Walking in, you feel the {grand setup|modern design}, but the daily operations are {just decent|average} compared to what is promised.",
-    "Surprised to see such a {huge|modern} layout here, but the crowd management {needs work|could be smoother} during busy evening hours.",
-    "Compared to other gyms in Solapur, this is {definitely cleaner|more spacious} but slightly {on the expensive side|pricier} for what it offers.",
-    "I came to start my fitness routine and found {good equipment|nice vibe}, though the trainers {could be more proactive|are busy}.",
-    "A decent choice for fitness lovers in Solapur, but {make sure to clarify|check out} the package details before joining.",
-    "The steam and recovery setups are {quite relaxing|very good}, but the workout floor {gets busy in evenings|is crowded} with members.",
-    "The staff is {courteous|helpful} and Raghu Sir is {polite|humble}, but the floor trainers {should assist more|are average}.",
-    "The machine variety is {good|impressive}, but the weights area {gets messy|is disorganized} during peak hours on weekdays.",
-    "The workout energy here is {very positive|quite active}, but the music is {sometimes too loud|a bit distracting} for my taste."
-  ],
-  4: [
-    "This is easily the {most spacious|cleanest} gym in Solapur, with a {fantastic|premium} setup that offers everything you need for a good workout. The overall design is very modern.",
-    "My first visit to the gym {left me impressed|felt really good} due to the {luxury entrance|grand layout} and clean environment. They have done a good job.",
-    "I was surprised by the {amazing crowd|top-notch maintenance} and how {neat|spotless} everything is kept throughout the day. It feels very premium.",
-    "After trying a couple of local gyms, this place {is far better|stands out} in terms of {space and hygiene|equipment quality}. It is a level above.",
-    "Joined for regular strength training and found a {very supportive|great} environment for my workouts. The members are also polite.",
-    "Definitely recommend this gym if you want a {premium|high quality} training environment in Solapur. It is a solid investment for your health.",
-    "Love the spa and shower facilities after a {heavy|intense} training session on the main floor. The amenities are very well managed.",
-    "The coaching team is {expert|attentive} and Raghu Sir is {highly supportive|always encouraging}. They always welcome you with a smile.",
-    "The selection of machines is {outstanding|excellent} compared to any other gym in town. There is rarely any waiting time.",
-    "The workout vibe here is {really motivating|highly energetic} and keeps you {focused|consistent} on your fitness goals every day."
-  ],
-  5: [
-    "Absolutely love the {massive|grand} space and the {elite|premium} workout environment here in Solapur. It is easily the best place to train, and the setup is incredibly modern, spacious, and well-planned for all fitness levels.",
-    "Felt {instantly motivated|super excited} walking into this gym; the entrance and lobby look {so luxurious|beautiful}. It is like a luxury club in Solapur.",
-    "What surprised me most was the {personal attention|high level of cleanliness} maintained even during peak hours. The staff does an amazing job keeping the premises tidy.",
-    "Tried many gyms in Solapur, but nothing comes {close to|near} this place in terms of {quality and vibes|equipment}. It is completely in a class of its own.",
-    "Came here for a complete body transformation and found {outstanding results|the perfect support system}. The guidance here has changed my entire routine.",
-    "If you want the {best fitness experience|top-tier gym} in Solapur, just join this place without {a second thought|any doubt}. It is absolutely the ultimate fitness destination.",
-    "The post-workout recovery here is {luxury level|amazing}; the steam and bath are {always clean|superb}. It is the perfect reward after a hard workout session.",
-    "The trainers are {highly knowledgeable|super helpful} and Raghu Sir is {incredibly humble|a true guide}. The staff goes out of their way to support your goals.",
-    "The variety of imported machines here {is mind-blowing|is the best}; workouts are {so smooth|great}. You will find every piece of equipment you ever need.",
-    "The atmosphere here is {unmatched|pure energy} and the member community is {very encouraging|awesome}. Training here is the highlight of my day."
-  ]
-};
-
-const CLOSINGS: Record<number, string[]> = {
-  1: [
-    "I would {strongly advise|urge} people to check out other places in Solapur, as the {aspect1} and the {aspect2} are {just not worth|far below} the premium price.",
-    "While they promise {top-tier fitness|a luxury club experience}, the reality of the {aspect1} and the {aspect2} is {extremely disappointing|a major letdown}.",
-    "It is {hard to stay motivated|difficult to recommend this place} when you have to deal with the {aspect1} and the {aspect2} {in such poor condition|being so neglected}.",
-    "Both the {aspect1} and {aspect2} {need urgent attention|are poorly managed} by the {management|owners}.",
-    "Even the quality of the {aspect1} was {extremely disappointing|not up to the mark}, and I found the {aspect2} {always messy|neglected}.",
-    "Management should {seriously fix|look into} the {aspect1} and the {aspect2} instead of {just taking high fees|charging so much}."
-  ],
-  2: [
-    "The setup for the {aspect1} is {decent|okay}, but issues with the {aspect2} {make it hard|make me hesitate} to recommend this place to my friends.",
-    "Hope they {improve|work on} the {aspect1} and clean the {aspect2} {more regularly|properly} soon.",
-    "While I {liked|enjoyed} the {aspect1}, the overall experience with the {aspect2} was {quite average|nothing special} for a gym of this size.",
-    "They have a {good|decent} {aspect1}, but the overall setup of the {aspect2} {definitely needs|requires} better upkeep."
-  ],
-  3: [
-    "Overall, the setup for the {aspect1} is {quite good|decent}, but the {aspect2} section has {room for improvement|some issues} that they should fix soon to keep members happy.",
-    "My experience with the {aspect1} is {fine|good}, though the {aspect2} {gets crowded|can be managed better} during peak times.",
-    "The setup of the {aspect1} is {standard|decent}, and I found the {aspect2} to be {reasonably clean|okay} most of the time.",
-    "If they can {tweak|improve} the {aspect1} and pay more attention to the {aspect2}, it would be {great|much better}."
-  ],
-  4: [
-    "Particularly {happy|pleased} with the {aspect1} and the overall {cleanliness|hygiene} of the {aspect2}. It is a great place to stay fit and active, and I always look forward to my daily training sessions.",
-    "The setup for the {aspect1} is {super|great}, and the training support around the {aspect2} is {very helpful|highly professional}.",
-    "Great experience with the {aspect1}, and the staff keeps the {aspect2} {in great shape|very hygienic}.",
-    "Highly recommend {trying|checking out} the {aspect1}; also, the {aspect2} {definitely stands out|makes my workouts very smooth}.",
-    "Love how the {aspect1} is {set up|designed}, and the setup of the {aspect2} {always feels premium|is very clean}."
-  ],
-  5: [
-    "The setup for the {aspect1} is {absolutely top-class|world-class}, and the overall experience with the {aspect2} is {fantastic|amazing}. I would highly recommend this gym to anyone looking for serious results and a premium lifestyle experience.",
-    "Incredibly {happy|satisfied} with my training here, especially the {aspect1}, and the {aspect2} area {feels like a five-star hotel|is amazing}.",
-    "Shoutout to the {team|staff} for the {aspect1}; the quality of the {aspect2} setup is {just elite|fantastic}.",
-    "Best decision to {join|sign up}; the {aspect1} and the {aspect2} are {just perfect|absolutely top notch}.",
-    "{Outstanding setup for|Phenomenal layout of|Incredible execution in|Superb equipment for} the {aspect1}, and {every session utilizing|regular training around|my personal experience with} the {aspect2} is {pure luxury|deeply satisfying|absolutely wonderful|extremely rewarding}."
-  ]
-};
-
-function resolveSwapPoints(text: string): string {
-  const regex = /\{([^}]+)\}/g;
-  return text.replace(regex, (_, optionsStr) => {
-    const options = optionsStr.split("|");
-    return options[Math.floor(Math.random() * options.length)];
-  });
-}
-
 interface ReviewGeneratorModalProps {
   onClose: () => void;
 }
 
 function ReviewGeneratorModal({ onClose }: ReviewGeneratorModalProps) {
   const [rating, setRating] = useState<number | null>(null);
+  const [reviewId, setReviewId] = useState<string | null>(null);
   const [review, setReview] = useState<string>("");
   const [copied, setCopied] = useState(false);
   const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [isPoolExhausted, setIsPoolExhausted] = useState(false);
+  const [fetchError, setFetchError] = useState(false);
 
-  const generateReview = (selectedRating: number) => {
-    let candidates: Array<{ styleIndex: number; aspectIndex: number; closingIndex: number }> = [];
-    for (let s = 0; s < STYLES.length; s++) {
-      for (let a = 0; a < ASPECTS.length; a++) {
-        const closingsCount = CLOSINGS[selectedRating].length;
-        for (let c = 0; c < closingsCount; c++) {
-          candidates.push({ styleIndex: s, aspectIndex: a, closingIndex: c });
+  const fetchReview = async (selectedRating: number) => {
+    setLoading(true);
+    setIsPoolExhausted(false);
+    setFetchError(false);
+    setReview("");
+    setReviewId(null);
+    try {
+      const result = await getUnusedReviewFn({ data: { starRating: selectedRating } });
+      if (result && "error" in result) {
+        if (result.error === "pool_exhausted") {
+          setIsPoolExhausted(true);
+        } else {
+          setFetchError(true);
         }
+      } else if (result && "reviewText" in result && result.reviewText) {
+        setReview(result.reviewText);
+        setReviewId(result.id || null);
+      } else {
+        setFetchError(true);
       }
+    } catch (err) {
+      console.error("Failed to fetch review:", err);
+      setFetchError(true);
+    } finally {
+      setLoading(false);
     }
-
-    const usedStr = localStorage.getItem("goodlife_used_reviews");
-    let used: Array<{ rating: number; styleIndex: number; aspectIndex: number; closingIndex: number }> = usedStr ? JSON.parse(usedStr) : [];
-
-    let filteredCandidates = candidates.filter(cand => 
-      !used.some(u => u.rating === selectedRating && u.styleIndex === cand.styleIndex && u.aspectIndex === cand.aspectIndex && u.closingIndex === cand.closingIndex)
-    );
-
-    if (filteredCandidates.length === 0) {
-      used = used.filter(u => u.rating !== selectedRating);
-      localStorage.setItem("goodlife_used_reviews", JSON.stringify(used));
-      filteredCandidates = candidates;
-    }
-
-    const pick = filteredCandidates[Math.floor(Math.random() * filteredCandidates.length)];
-
-    used.push({ rating: selectedRating, ...pick });
-    if (used.length > 200) {
-      used = used.slice(used.length - 200);
-    }
-    localStorage.setItem("goodlife_used_reviews", JSON.stringify(used));
-
-    const rawOpening = OPENINGS[selectedRating][pick.styleIndex];
-    const rawClosing = CLOSINGS[selectedRating][pick.closingIndex];
-
-    const aspectGroup = ASPECTS[pick.aspectIndex];
-    const shuffledAspects = [...aspectGroup].sort(() => Math.random() - 0.5);
-    const aspect1 = shuffledAspects[0];
-    const aspect2 = shuffledAspects[1];
-
-    let resolvedClosing = rawClosing
-      .replace(/{aspect1}/g, aspect1)
-      .replace(/{aspect2}/g, aspect2);
-
-    let fullText = `${rawOpening} ${resolvedClosing}`;
-    fullText = resolveSwapPoints(fullText);
-
-    if (selectedRating >= 4 && Math.random() < 0.5) {
-      const emojis = ["💪", "🔥", "👍", "🙌"];
-      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-      fullText += ` ${emoji}`;
-    }
-
-    setReview(fullText);
   };
 
   const handleStarClick = (selectedRating: number) => {
     setRating(selectedRating);
-    generateReview(selectedRating);
     setStep(2);
-  };
-
-  const handleRegenerate = () => {
-    if (rating !== null) {
-      generateReview(rating);
+    if (selectedRating >= 3) {
+      fetchReview(selectedRating);
     }
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(review);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1500);
+  const handleRegenerate = () => {
+    if (rating !== null && rating >= 3) {
+      fetchReview(rating);
+    }
   };
+
+  const handleCopy = async () => {
+    if (!review) return;
+    try {
+      await navigator.clipboard.writeText(review);
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 1500);
+
+      if (reviewId) {
+        await markReviewUsedFn({ data: { id: reviewId } });
+      }
+    } catch (err) {
+      console.error("Failed to copy or mark review as used:", err);
+    }
+  };
+
+  const feedbackUrl = `https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20wanted%20to%20share%20some%20feedback%20about%20my%20experience%20and%20how%20you%20can%20make%20it%20right.`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 backdrop-blur-sm">
@@ -1144,7 +999,7 @@ function ReviewGeneratorModal({ onClose }: ReviewGeneratorModalProps) {
         {step === 2 && (
           <AnimatePresence mode="wait">
             <motion.div
-              key={review}
+              key={rating}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -1164,40 +1019,87 @@ function ReviewGeneratorModal({ onClose }: ReviewGeneratorModalProps) {
                 ))}
               </div>
 
-              <div className="rounded-lg border border-border/80 bg-black/40 p-4 min-h-[90px]">
-                <p className="text-foreground/90 text-sm leading-relaxed italic">
-                  "{review}"
-                </p>
-              </div>
+              {rating !== null && rating <= 2 ? (
+                <div className="flex flex-col gap-5 text-center">
+                  <div className="rounded-lg border border-border/80 bg-black/40 p-4 min-h-[90px] flex items-center justify-center">
+                    <p className="text-foreground/90 text-sm leading-relaxed">
+                      We'd love to make this right. Please reach out to our management team directly.
+                    </p>
+                  </div>
+                  <a
+                    href={feedbackUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="w-full text-center bg-primary text-primary-foreground hover:bg-primary/90 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px]"
+                  >
+                    Contact on WhatsApp
+                  </a>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-5">
+                  <div className="rounded-lg border border-border/80 bg-black/40 p-4 min-h-[90px] flex items-center justify-center">
+                    {loading ? (
+                      <span className="text-sm text-muted-foreground animate-pulse">Loading review...</span>
+                    ) : fetchError ? (
+                      <p className="text-destructive text-sm leading-relaxed">
+                        Failed to load review. Please check your connection and try again.
+                      </p>
+                    ) : isPoolExhausted ? (
+                      <p className="text-foreground/90 text-sm leading-relaxed">
+                        Thanks for your enthusiasm! Please write a quick line in your own words and tap below to post on Google Maps.
+                      </p>
+                    ) : (
+                      <p className="text-foreground/90 text-sm leading-relaxed italic">
+                        "{review}"
+                      </p>
+                    )}
+                  </div>
 
-              <div className="flex gap-3">
-                <button
-                  onClick={handleRegenerate}
-                  className="flex-1 border border-border text-foreground bg-transparent hover:bg-white/5 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px] cursor-pointer"
-                >
-                  Regenerate
-                </button>
-                <button
-                  onClick={handleCopy}
-                  className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px] cursor-pointer"
-                >
-                  {copied ? "Copied!" : "Copy Review"}
-                </button>
-              </div>
+                  {fetchError && !loading && (
+                    <button
+                      onClick={handleRegenerate}
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px] cursor-pointer"
+                    >
+                      Retry
+                    </button>
+                  )}
 
-              <div className="border-t border-border/60 pt-4 flex flex-col items-center">
-                <span className="text-xs text-muted-foreground mb-3 text-center">
-                  Copy your review, then tap below to post it on Google Maps.
-                </span>
-                <a
-                  href="https://www.google.com/maps/place/Goodlife+Fitness+Club/@17.6790241,75.8923844,16z/data=!4m8!3m7!1s0x3bc5d16fc2368433:0x710606bb688c8f37!8m2!3d17.6790241!4d75.8923844!9m1!1b1!16s%2Fg%2F11z56_r2x0?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener"
-                  className="w-full text-center border border-primary text-primary hover:bg-primary/10 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px]"
-                >
-                  Paste on Google Maps
-                </a>
-              </div>
+                  {!isPoolExhausted && !fetchError && (
+                    <div className="flex gap-3">
+                      <button
+                        onClick={handleRegenerate}
+                        disabled={loading}
+                        className="flex-1 border border-border text-foreground bg-transparent hover:bg-white/5 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px] cursor-pointer disabled:opacity-50"
+                      >
+                        Regenerate
+                      </button>
+                      <button
+                        onClick={handleCopy}
+                        disabled={loading || !review}
+                        className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px] cursor-pointer disabled:opacity-50"
+                      >
+                        {copied ? "Copied!" : "Copy Review"}
+                      </button>
+                    </div>
+                  )}
+
+                  <div className="border-t border-border/60 pt-4 flex flex-col items-center">
+                    <span className="text-xs text-muted-foreground mb-3 text-center">
+                      {isPoolExhausted || fetchError
+                        ? "Tap below to post your review directly on Google Maps." 
+                        : "Copy your review, then tap below to post it on Google Maps."}
+                    </span>
+                    <a
+                      href="https://www.google.com/maps/place/Goodlife+Fitness+Club/@17.6790241,75.8923844,16z/data=!4m8!3m7!1s0x3bc5d16fc2368433:0x710606bb688c8f37!8m2!3d17.6790241!4d75.8923844!9m1!1b1!16s%2Fg%2F11z56_r2x0?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener"
+                      className="w-full text-center border border-primary text-primary hover:bg-primary/10 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px]"
+                    >
+                      Paste on Google Maps
+                    </a>
+                  </div>
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
         )}
@@ -1211,7 +1113,7 @@ function TestimonialsSection() {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
 
   return (
-    <section className="bg-elevated py-24 md:py-32">
+    <section id="reviews" className="bg-elevated py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
