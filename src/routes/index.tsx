@@ -753,8 +753,11 @@ function SocialSection() {
             Goodlife’s Instagram-style selfie point turns progress into social momentum. It feels premium, branded and naturally shareable — perfect for member stories, transformation posts and viral attention.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="https://instagram.com/goodlifefitness_" target="_blank" rel="noopener" className="btn-secondary-premium">
-              <Instagram className="size-4 text-primary" /> Follow @goodlifefitness_
+            <a href="https://instagram.com/goodlifefitness_" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span className="text-white text-sm">Follow us on Instagram</span>
             </a>
           </div>
         </div>
@@ -1272,18 +1275,19 @@ function EnquirySection() {
     window.open(`https://wa.me/919325342686?text=${text}`, "_blank", "noopener");
   }
 
-  const inputCls = "w-full rounded-[6px] border border-border/70 bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary/60 focus:outline-none focus:ring-1 focus:ring-primary/40";
+  const inputCls = "w-full rounded-[8px] border border-border/50 bg-[#1c1c1c] px-4 py-3 text-sm text-white placeholder:text-muted-foreground/70 focus:border-[#FF6B00] focus:outline-none focus:ring-1 focus:ring-[#FF6B00]";
 
   return (
-    <section id="enquiry" className="bg-background py-24 md:py-32">
+    <section id="enquiry" className="relative bg-[#0d0d0d] py-24 md:py-32">
+      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#FF6B00] to-transparent" />
       <div className="mx-auto max-w-3xl px-6">
         <div className="text-center">
           <Eyebrow centered>Get Started</Eyebrow>
-          <SectionTitle>
-            Send <span className="text-primary">Enquiry</span>
-          </SectionTitle>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Share a few details — we'll respond on WhatsApp within minutes.
+          <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] uppercase font-bold text-foreground leading-none">
+            Send <span className="text-[#FF6B00]">Enquiry</span>
+          </h2>
+          <p className="mt-4 text-sm text-gray-400 font-normal">
+            We'll get back to you within 24 hours
           </p>
         </div>
 
@@ -1308,7 +1312,7 @@ function EnquirySection() {
             </select>
           </div>
           <textarea maxLength={500} rows={4} placeholder="Any specific queries or goals?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className={inputCls} />
-          <button type="submit" className="btn-premium justify-center">
+          <button type="submit" className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-[#FF6B00] text-white uppercase font-bold py-3.5 px-6 rounded-[8px] hover:bg-[#e05e00] hover:scale-[1.02] transition-all cursor-pointer">
             <MessageCircle className="size-4" /> Send to WhatsApp
           </button>
         </motion.form>

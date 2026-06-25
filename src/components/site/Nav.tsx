@@ -71,7 +71,7 @@ export function Nav() {
           />
           <div className="leading-tight">
             <div className="font-display text-lg tracking-wider">GOODLIFE</div>
-            <div className="text-[10px] text-muted-foreground tracking-[0.3em] -mt-1">FITNESS CLUB</div>
+            <div className="text-[10px] text-muted-foreground tracking-[0.3em] -mt-1">FITNESS</div>
           </div>
         </a>
 
@@ -93,14 +93,14 @@ export function Nav() {
             </button>
             {dropdownOpen && (
               <div 
-                className="absolute top-full left-0 z-50 mt-1 w-64 bg-charcoal border border-border/60 py-2 px-1 rounded-[6px] shadow-2xl"
+                className="absolute top-full left-0 z-50 mt-1 w-64 bg-[#111111] border border-border/60 py-2 px-1 rounded-[6px] shadow-2xl"
               >
                 {facilities.map(f => (
                   <a 
                     key={f.href} 
                     href={f.href} 
                     onClick={() => setDropdownOpen(false)}
-                    className="text-zinc-300 hover:text-white transition-colors cursor-pointer w-full block py-2 px-3 hover:bg-ember/20 rounded-[4px] text-xs uppercase tracking-wider"
+                    className="text-[#FFFFFF] hover:text-[#FFFFFF] hover:bg-[#FF6B00] transition-colors cursor-pointer w-full block py-2 px-3 rounded-[4px] text-xs uppercase tracking-wider"
                   >
                     {f.label}
                   </a>

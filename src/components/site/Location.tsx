@@ -13,7 +13,7 @@ export function Location() {
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Address</div>
                 <p className="leading-relaxed">
-                  Goodlife Fitness Club,<br />
+                  Goodlife Fitness<br />
                   Sai Icon, near Ambassador Hotel,<br />
                   Dharamsi Lane, Murarji Peth,<br />
                   Solapur, Maharashtra 413001, India
@@ -31,7 +31,10 @@ export function Location() {
               <Clock className="size-5 text-ember mt-1 shrink-0" />
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Hours</div>
-                <p>Mon–Sun · 5:00 AM – 11:00 PM</p>
+                <p className="leading-relaxed">
+                  Mon–Sat: 6:00 AM – 11:00 PM<br />
+                  Sun: 6:00 AM – 12:00 PM
+                </p>
               </div>
             </div>
           </div>
