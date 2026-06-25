@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section id="top" className="relative min-h-screen flex flex-col justify-end overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Powerful athlete training inside Goodlife Fitness Club" width={1920} height={1280} className="w-full h-full object-cover scale-105" />
+        <img src={heroImg} alt="Premium gym equipment at Goodlife Fitness Solapur" width={1920} height={1280} className="w-full h-full object-cover scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
         <div className="absolute inset-0 grain opacity-60" />
       </div>
@@ -30,10 +30,16 @@ export function Hero() {
             <span className="text-xs tracking-[0.4em] text-ember uppercase">Biggest Gym In Solapur</span>
           </div>
           <h1 className="font-display text-[clamp(2.8rem,8vw,7.5rem)] leading-[0.9] uppercase">
-            Biggest <span className="text-ember">Fitness</span><br />
-            Destination<br />
-            <span className="text-stroke">In Solapur</span>
+            Solapur's Best <span className="text-ember">Premium Gym</span> —<br />
+            Goodlife <span className="text-stroke">Fitness</span>
           </h1>
+          <p className="sr-only">
+            Goodlife Fitness is the best gym in Solapur, Maharashtra.
+            Premium fitness centre in Murarji Peth offering CrossFit,
+            Zumba, Boxing, Power Yoga, Steam Bath, Spa and Salon.
+            Best gym near you in Solapur. Personal trainers available
+            for weight loss and body transformation.
+          </p>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
             Transform your body. Build strength.<br />
             <span className="text-foreground">Unlock your best version.</span>

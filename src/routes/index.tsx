@@ -268,6 +268,7 @@ function Index() {
         <TestimonialsSection />
         <EnquirySection />
         <FinalCtaSection />
+        <FAQSection />
         <Location />
       </main>
       <Footer />
@@ -282,7 +283,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <img
           src={strengthZoneAsset.url}
-          alt="Strength training area inside Goodlife Fitness Club in Solapur"
+          alt="Strength training zone at Goodlife Fitness Solapur"
           className="h-full w-full object-cover object-center"
           width={1600}
           height={900}
@@ -317,6 +318,13 @@ function HeroSection() {
             <br />
             Destination In <span className="text-outline-gold">Solapur</span>
           </h1>
+          <p className="sr-only">
+            Goodlife Fitness is the best gym in Solapur, Maharashtra.
+            Premium fitness centre in Murarji Peth offering CrossFit,
+            Zumba, Boxing, Power Yoga, Steam Bath, Spa and Salon.
+            Best gym near you in Solapur. Personal trainers available
+            for weight loss and body transformation.
+          </p>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/78 md:text-2xl">
             Train Smarter. Recover Better. Transform Faster.
@@ -390,7 +398,7 @@ function ReceptionSection() {
     <section id="about" className="relative overflow-hidden bg-background py-24 md:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(255,123,31,0.12),transparent_24%)]" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-        <ImageFrame src={receptionAsset.url} alt="Luxury reception lounge at Goodlife Fitness Club" priority />
+        <ImageFrame src={receptionAsset.url} alt="Premium reception area at Goodlife Fitness Solapur" priority />
         <div>
           <Eyebrow>Reception Experience</Eyebrow>
           <SectionTitle>
@@ -419,7 +427,7 @@ function FacilitiesHeaderSection() {
           <div>
             <Eyebrow>Facilities Overview</Eyebrow>
             <SectionTitle>
-              World-Class <span className="text-primary">Facilities</span>
+              Our Facilities — <span className="text-primary">Premium Gym in Solapur</span>
             </SectionTitle>
           </div>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-right">
@@ -444,7 +452,7 @@ function StrengthSection() {
         "Built for muscle gain, body recomposition and raw strength",
       ]}
       image={strengthZoneAsset.url}
-      alt="Strength training zone with Today’s Pain Is Tomorrow’s Power mural"
+      alt="Strength zone at the best gym in Solapur"
       accent="power"
     />
   );
@@ -463,7 +471,7 @@ function EquipmentSection() {
         "Smarter progressive strength training with controlled execution",
       ]}
       image={machineZoneAsset.url}
-      alt="Premium selectorized strength equipment zone at Goodlife Fitness Club"
+      alt="Modern gym machines at Goodlife Fitness Solapur"
       reverse
     />
   );
@@ -496,7 +504,7 @@ function SpinStudioSection() {
           </div>
         </div>
         <div className="relative overflow-hidden rounded-[8px] border border-border/70 shadow-premium">
-          <img src={spinStudioAsset.url} alt="Neon-lit spin studio at Goodlife Fitness Club" loading="lazy" className="h-full w-full object-cover" />
+          <img src={spinStudioAsset.url} alt="Spinning studio at Goodlife Fitness premium gym Solapur" loading="lazy" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,8,15,0.12),rgba(5,8,15,0.42))]" />
           <motion.div
             animate={{ x: ["-15%", "15%", "-15%"] }}
@@ -527,7 +535,7 @@ function CardioSection() {
         "A premium cardio gym in Solapur that feels clean, modern and focused",
       ]}
       image={cardioZoneAsset.url}
-      alt="Premium treadmill lineup in the cardio zone at Goodlife Fitness Club"
+      alt="Cardio zone at best gym in Solapur"
       metrics
     />
   );
@@ -546,7 +554,7 @@ function BoxingSection() {
         "Boxing training in Solapur with a sharper premium aesthetic",
       ]}
       image={boxingArenaAsset.url}
-      alt="Boxing arena with punching bags inside Goodlife Fitness Club"
+      alt="Boxing arena at Goodlife Fitness boxing gym Solapur"
       reverse
       aggressive
     />
@@ -558,7 +566,7 @@ function YogaSection() {
     <section id="yoga" className="relative overflow-hidden bg-background py-24 md:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,176,73,0.12),transparent_22%)]" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
-        <ImageFrame src={yogaStudioAsset.url} alt="Premium yoga studio at Goodlife Fitness Club in Solapur" />
+        <ImageFrame src={yogaStudioAsset.url} alt="Power Yoga studio at Goodlife Fitness Solapur" />
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
           <Eyebrow>Yoga & Wellness</Eyebrow>
           <SectionTitle>
@@ -591,7 +599,7 @@ function LockerSection() {
         "Designed for cleanliness, privacy and everyday convenience",
       ]}
       image={lockerAsset.url}
-      alt="Locker room at Goodlife Fitness Club"
+      alt="Premium locker room at Goodlife Fitness Solapur"
     />
   );
 }
@@ -609,7 +617,7 @@ function SalonSection() {
         "Designed to make recovery and presentation feel equally elevated",
       ]}
       image={salonAsset.url}
-      alt="Premium salon and grooming area at Goodlife Fitness Club"
+      alt="Salon facility at Goodlife Fitness gym Solapur"
     />
   );
 }
@@ -627,7 +635,7 @@ function SteamSection() {
         "Adds a high-end recovery layer rarely found in local fitness clubs",
       ]}
       image={steamAsset.url}
-      alt="Steam recovery room at Goodlife Fitness Club"
+      alt="Steam bath at Goodlife Fitness premium gym Solapur"
     />
   );
 }
@@ -645,7 +653,7 @@ function SpaSection() {
         "Balances the club's high-energy floors with a more restorative experience",
       ]}
       image={spaAsset.url}
-      alt="Luxury spa room at Goodlife Fitness Club"
+      alt="Spa facility at Goodlife Fitness gym Solapur"
     />
   );
 }
@@ -663,7 +671,7 @@ function BathSection() {
         "Turns a basic utility into a premium member experience",
       ]}
       image={bathAsset.url}
-      alt="Premium bath and shower area at Goodlife Fitness Club"
+      alt="Premium bath facility at Goodlife Fitness Solapur"
     />
   );
 }
@@ -687,7 +695,7 @@ function PlanningSection() {
             <FeaturePill title="Accountability" text="A system that keeps momentum alive when motivation drops." />
           </div>
         </div>
-        <ImageFrame src={transformationLoungeAsset.url} alt="Consultation lounge for fitness planning at Goodlife Fitness Club" />
+        <ImageFrame src={transformationLoungeAsset.url} alt="Consultation lounge at Goodlife Fitness Solapur" />
       </div>
     </section>
   );
@@ -702,7 +710,7 @@ function TransformationSection() {
           <div>
             <Eyebrow>Transformations</Eyebrow>
             <SectionTitle>
-              Results That Feel <span className="text-primary">Earned</span>
+              Real Fitness Transformations <span className="text-primary">in Solapur</span>
             </SectionTitle>
           </div>
           <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-right">
@@ -721,7 +729,7 @@ function TransformationSection() {
               className="premium-panel overflow-hidden p-4"
             >
               <div className="relative overflow-hidden rounded-[8px] border border-border/70 bg-black">
-                <img src={item.image} alt={`${item.name} transformation at Goodlife Fitness Club`} loading="lazy" className="h-full w-full object-cover" />
+                <img src={item.image} alt="Body transformation result at Goodlife Fitness Solapur" loading="lazy" className="h-full w-full object-cover" />
               </div>
               <div className="mt-4 flex items-start justify-between gap-4">
                 <div>
@@ -762,7 +770,7 @@ function SocialSection() {
           </div>
         </div>
 
-        <ImageFrame src={selfiePointAsset.url} alt="Instagram selfie point at Goodlife Fitness Club" />
+        <ImageFrame src={selfiePointAsset.url} alt="Selfie point at Goodlife Fitness premium gym Solapur" />
       </div>
     </section>
   );
@@ -771,19 +779,19 @@ function SocialSection() {
 function TrainersSection() {
   const owner = {
     image: ownerAsset.url,
-    alt: "Raghu Sir, owner of Goodlife Fitness Club",
+    alt: "Goodlife Fitness owner and head trainer Solapur",
     name: "Raghu Sir",
     role: "Owner",
   };
   const management = [
-    { image: trainer1Asset.url, alt: "Head Manager at Goodlife Fitness Club", name: "", role: "Head Manager" },
-    { image: trainer2NewAsset.url, alt: "Floor Manager at Goodlife Fitness Club", name: "", role: "Floor Manager" },
+    { image: trainer1Asset.url, alt: "Head manager at Goodlife Fitness Solapur gym", name: "", role: "Head Manager" },
+    { image: trainer2NewAsset.url, alt: "Floor manager at Goodlife Fitness Solapur", name: "", role: "Floor Manager" },
   ];
   const trainers = [
-    { image: trainer3Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
-    { image: trainer4Asset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
-    { image: trainer5NewAsset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
-    { image: trainerNewAsset.url, alt: "Goodlife Fitness Club trainer portrait", name: "", role: "Trainer" },
+    { image: trainer3Asset.url, alt: "Certified personal trainer at Goodlife Fitness Solapur", name: "", role: "Trainer" },
+    { image: trainer4Asset.url, alt: "Certified personal trainer at Goodlife Fitness Solapur", name: "", role: "Trainer" },
+    { image: trainer5NewAsset.url, alt: "Certified personal trainer at Goodlife Fitness Solapur", name: "", role: "Trainer" },
+    { image: trainerNewAsset.url, alt: "Certified personal trainer at Goodlife Fitness Solapur", name: "", role: "Trainer" },
   ];
 
   const cardCls =
@@ -828,7 +836,7 @@ function TrainersSection() {
         <div className="text-center">
           <Eyebrow centered>The Coaching Team</Eyebrow>
           <h2 className="mt-4 font-display text-balance text-[clamp(2.75rem,7vw,6.4rem)] uppercase leading-[0.86] text-foreground">
-            Our <span className="text-primary">Trainers</span>
+            Expert <span className="text-primary">Personal Trainers</span> in Solapur
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             Certified coaches led by Raghu Sir — building champions through precision programming and relentless accountability.
@@ -870,7 +878,7 @@ function TrainersSection() {
           <div className="relative overflow-hidden rounded-[8px]">
             <img
               src={familyAsset.url}
-              alt="The Goodlife Fitness Club team — coaches and staff together"
+              alt="Expert trainer team at Goodlife Fitness best gym Solapur"
               loading="lazy"
               className="h-auto w-full object-cover object-center"
             />
@@ -1122,7 +1130,7 @@ function TestimonialsSection() {
           <div>
             <Eyebrow>Member Reactions</Eyebrow>
             <SectionTitle>
-              The Club People <span className="text-primary">Talk About</span>
+              What Our <span className="text-primary">Solapur Members Say</span>
             </SectionTitle>
           </div>
           <div className="w-fit self-start md:self-auto inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-primary">
@@ -1185,6 +1193,92 @@ function FinalCtaSection() {
           <a href="tel:+919325342686" className="btn-secondary-premium">
             <Phone className="size-4 text-primary" /> Call Now
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "Where is Goodlife Fitness located in Solapur?",
+      a: "We're at Sai Icon, near Ambassador Hotel, Dharamsi Lane, Murarji Peth, Solapur — Maharashtra 413001. Easily accessible from Solapur Railway Station and Central Bus Stand."
+    },
+    {
+      q: "What are the gym timings?",
+      a: "Monday to Saturday: 6:00 AM – 11:00 PM. Sunday: 6:00 AM – 12:00 PM"
+    },
+    {
+      q: "What fitness classes does Goodlife Fitness offer?",
+      a: "CrossFit, Zumba, Boxing, Power Yoga and Spinning — for all levels, complete beginners to advanced athletes."
+    },
+    {
+      q: "Is there a steam bath, spa or salon?",
+      a: "Yes. Goodlife Fitness has a Steam Bath, Spa and Salon all under one roof — the most complete gym experience in Solapur."
+    },
+    {
+      q: "Do you offer personal training?",
+      a: "Yes. Expert certified trainers build personalised programs for weight loss, muscle gain and body transformation."
+    },
+    {
+      q: "Is Goodlife Fitness suitable for beginners and women?",
+      a: "Absolutely. Supportive environment for men and women at all fitness levels. Right guidance from Day 1, guaranteed."
+    }
+  ];
+
+  return (
+    <section id="faq" className="relative bg-[#0d0d0d] py-24 md:py-32 border-t border-border/60">
+      <div className="mx-auto max-w-3xl px-6">
+        <div className="text-center mb-12">
+          <Eyebrow centered>FAQ</Eyebrow>
+          <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] uppercase font-bold text-foreground leading-none">
+            Frequently Asked <span className="text-primary">Questions</span>
+          </h2>
+          <p className="mt-4 text-sm text-gray-400 font-normal">
+            Everything you need to know about Goodlife Fitness, Solapur
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div
+                key={i}
+                className="premium-panel overflow-hidden border border-border/50 bg-[#111111]"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="flex w-full items-center justify-between px-6 py-5 text-left text-foreground hover:text-primary transition-colors duration-300 outline-none cursor-pointer"
+                >
+                  <span className="font-display text-lg uppercase tracking-wide pr-4">
+                    {faq.q}
+                  </span>
+                  <span className="text-primary shrink-0 text-xl font-bold">
+                    {isOpen ? "−" : "+"}
+                  </span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <div className="px-6 pb-5 text-muted-foreground text-sm leading-relaxed border-t border-border/20 pt-4">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

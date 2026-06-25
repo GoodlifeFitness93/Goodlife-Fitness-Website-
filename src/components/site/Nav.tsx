@@ -66,7 +66,7 @@ export function Nav() {
         <a href="#top" className="flex items-center gap-2 group">
           <img 
             src={logoMasterAssetImg} 
-            alt="Goodlife Fitness Club logo" 
+            alt="Goodlife Fitness - Best Gym in Solapur" 
             className="h-9 w-auto object-contain"
           />
           <div className="leading-tight">

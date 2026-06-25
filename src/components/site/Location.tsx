@@ -6,7 +6,7 @@ export function Location() {
     <section id="contact" className="py-24 md:py-32 px-6 bg-charcoal">
       <div className="mx-auto max-w-7xl grid lg:grid-cols-5 gap-12">
         <div className="lg:col-span-2">
-          <SectionHeader eyebrow="Visit Us" title="Find The" accent="Goodlife." />
+          <SectionHeader eyebrow="Visit Us" title="Visit Goodlife Fitness —" accent="Best Gym in Solapur" />
           <div className="mt-10 space-y-6">
             <div className="flex gap-4">
               <MapPin className="size-5 text-ember mt-1 shrink-0" />

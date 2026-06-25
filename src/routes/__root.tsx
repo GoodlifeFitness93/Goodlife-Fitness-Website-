@@ -77,18 +77,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Goodlife Fitness Club — Biggest Gym in Solapur" },
-      { name: "description", content: "Solapur's largest premium fitness destination — advanced equipment, spa, yoga, boxing & expert coaching." },
-      { name: "theme-color", content: "#d40000" },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Goodlife Fitness Club" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Goodlife Fitness Club — Biggest Gym in Solapur" },
-      { name: "twitter:title", content: "Goodlife Fitness Club — Biggest Gym in Solapur" },
-      { property: "og:description", content: "Solapur's largest premium fitness destination — advanced equipment, spa, yoga, boxing & expert coaching." },
-      { name: "twitter:description", content: "Solapur's largest premium fitness destination — advanced equipment, spa, yoga, boxing & expert coaching." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3a0d3f2d-4b1b-48b4-b8c7-bb61c1e49586/id-preview-b29d3449--da5e19b6-fdcf-4f3f-880f-5c0c8ce09180.lovable.app-1780826342402.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3a0d3f2d-4b1b-48b4-b8c7-bb61c1e49586/id-preview-b29d3449--da5e19b6-fdcf-4f3f-880f-5c0c8ce09180.lovable.app-1780826342402.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -115,6 +103,150 @@ function RootShell({ children }: { children: ReactNode }) {
         <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
         <link rel="manifest" href="/site.webmanifest" />
+
+        {/* PRIMARY SEO */}
+        <title>Goodlife Fitness | Best Premium Gym in Solapur | CrossFit, Zumba, Boxing, Yoga</title>
+        <meta name="description" content="Solapur's #1 premium gym in Murarji Peth. CrossFit, Zumba, Boxing, Power Yoga, Steam Bath, Spa & Salon. Expert trainers. Open Mon–Sat 6AM–11PM, Sun 6AM–12PM. Join Goodlife Fitness today." />
+        <meta name="keywords" content="gym in Solapur, best gym in Solapur, premium gym Solapur, gym near me Solapur, CrossFit Solapur, Zumba classes Solapur, boxing gym Solapur, weight loss gym Solapur, fitness centre Solapur, gym Murarji Peth, personal trainer Solapur, ladies gym Solapur, gym with steam bath Solapur, Goodlife Fitness Solapur" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://goodlife-fitness-website.vercel.app/" />
+
+        {/* GEO TARGETING */}
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Solapur" />
+        <meta name="geo.position" content="17.6734376;75.8871958" />
+        <meta name="ICBM" content="17.6734376, 75.8871958" />
+
+        {/* OPEN GRAPH (WhatsApp/Facebook previews) */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Goodlife Fitness | Best Premium Gym in Solapur" />
+        <meta property="og:description" content="Solapur's #1 premium gym. CrossFit, Zumba, Boxing, Power Yoga, Steam Bath, Spa & Salon. Open 6AM daily. Join today." />
+        <meta property="og:url" content="https://goodlife-fitness-website.vercel.app/" />
+        <meta property="og:image" content="https://goodlife-fitness-website.vercel.app/assets/Weight%20training%20area-Bmpzfb-y.webp" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Goodlife Fitness Solapur" />
+
+        {/* TWITTER CARD */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Goodlife Fitness | Best Premium Gym in Solapur" />
+        <meta name="twitter:description" content="Solapur's #1 premium gym. CrossFit, Zumba, Boxing, Power Yoga, Steam Bath, Spa & Salon." />
+        <meta name="twitter:image" content="https://goodlife-fitness-website.vercel.app/assets/Weight%20training%20area-Bmpzfb-y.webp" />
+
+        {/* SCHEMA MARKUP — LOCAL BUSINESS */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HealthClub",
+              "name": "Goodlife Fitness",
+              "alternateName": "Goodlife Fitness Club Solapur",
+              "description": "Solapur's premium gym offering CrossFit, Zumba, Boxing, Power Yoga, Steam Bath, Salon and Spa. Expert personal trainers for weight loss, muscle gain and body transformation.",
+              "url": "https://goodlife-fitness-website.vercel.app/",
+              "telephone": "+919325342686",
+              "priceRange": "₹₹",
+              "hasMap": "https://maps.app.goo.gl/sdZ86UwrPESa7u416",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sai Icon, near Ambassador Hotel, Dharamsi Lane, Murarji Peth",
+                "addressLocality": "Solapur",
+                "addressRegion": "Maharashtra",
+                "postalCode": "413001",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 17.6734376,
+                "longitude": 75.8871958
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                  "opens": "06:00",
+                  "closes": "23:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Sunday",
+                  "opens": "06:00",
+                  "closes": "12:00"
+                }
+              ],
+              "amenityFeature": [
+                {"@type": "LocationFeatureSpecification", "name": "CrossFit", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Zumba Classes", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Boxing", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Power Yoga", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Steam Bath", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Spinning Studio", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Salon", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Spa", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Personal Training", "value": true}
+              ],
+              "sameAs": [
+                "https://instagram.com/goodlifefitness_",
+                "https://maps.app.goo.gl/sdZ86UwrPESa7u416"
+              ]
+            })
+          }}
+        />
+
+        {/* SCHEMA — FAQ (triggers Google FAQ rich results) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Where is Goodlife Fitness located in Solapur?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Goodlife Fitness is at Sai Icon, near Ambassador Hotel, Dharamsi Lane, Murarji Peth, Solapur, Maharashtra 413001."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the timings of Goodlife Fitness Solapur?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Open Monday to Saturday 6:00 AM to 11:00 PM and Sunday 6:00 AM to 12:00 PM."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What gym classes are available at Goodlife Fitness Solapur?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CrossFit, Zumba, Boxing, Power Yoga, and Spinning for all fitness levels."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does Goodlife Fitness Solapur have steam bath and spa?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Steam Bath, Spa, Salon, and Spinning Studio — all under one roof."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is Goodlife Fitness the best gym in Solapur?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Goodlife Fitness is Solapur's most complete fitness facility with modern equipment, expert trainers, group classes, and premium recovery amenities."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* FAVICON */}
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="theme-color" content="#d40000" />
       </head>
       <body>

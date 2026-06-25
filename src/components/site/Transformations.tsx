@@ -19,7 +19,7 @@ export function Transformations() {
           {cards.map((c, i) => (
             <motion.figure key={c.name} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }} className="group bg-charcoal overflow-hidden">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={c.img} alt={`${c.name} transformation`} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={c.img} alt="Body transformation result at Goodlife Fitness Solapur" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute top-4 left-4 bg-ember text-primary-foreground text-xs px-3 py-1 uppercase tracking-wider font-semibold">Before / After</div>
               </div>
               <figcaption className="p-6">

@@ -16,7 +16,7 @@ export function Trainer() {
       <div className="mx-auto max-w-7xl grid lg:grid-cols-12 gap-12 items-center relative">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="lg:col-span-5 relative">
           <div className="relative aspect-[4/5] overflow-hidden">
-            <img src={trainerImg} alt="Raghu Sir, head trainer at Goodlife Fitness Club" loading="lazy" className="w-full h-full object-cover" />
+            <img src={trainerImg} alt="Expert personal trainer at Goodlife Fitness Solapur" loading="lazy" className="w-full h-full object-cover" />
             <div className="absolute inset-0 ring-1 ring-inset ring-ember/30" />
           </div>
           <div className="absolute -bottom-6 -right-6 bg-ember text-primary-foreground p-6 ember-glow hidden md:block">

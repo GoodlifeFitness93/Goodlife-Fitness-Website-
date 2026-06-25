@@ -23,6 +23,18 @@ const facilities = [
   { icon: Camera, img: selfie, title: "Selfie Points", desc: "Capture your journey, share the win." },
 ];
 
+const facilityAlts: Record<string, string> = {
+  "Advanced Equipment": "Modern gym machines at Goodlife Fitness Solapur",
+  "Cardio Center": "Cardio zone at best gym in Solapur",
+  "Weight Training Zone": "Strength training zone at Goodlife Fitness Solapur",
+  "Yoga Center": "Power Yoga studio at Goodlife Fitness Solapur",
+  "Luxury Spa": "Spa facility at Goodlife Fitness gym Solapur",
+  "Steam Room": "Steam bath at Goodlife Fitness premium gym Solapur",
+  "Bath & Recovery": "Premium bath facility at Goodlife Fitness Solapur",
+  "Boxing Arena": "Boxing arena at Goodlife Fitness boxing gym Solapur",
+  "Selfie Points": "Selfie point at Goodlife Fitness premium gym Solapur",
+};
+
 export function Facilities() {
   return (
     <section id="facilities" className="py-24 md:py-32 px-6 bg-charcoal">
@@ -33,7 +45,7 @@ export function Facilities() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {facilities.map((f, i) => (
             <motion.div key={f.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: (i % 3) * 0.1 }} className="group relative bg-background overflow-hidden aspect-[4/5] cursor-pointer">
-              <img src={f.img} alt={f.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" />
+              <img src={f.img} alt={facilityAlts[f.title] || f.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
                 <div className="size-12 grid place-items-center border border-ember/40 bg-background/40 backdrop-blur-md mb-5 group-hover:bg-ember group-hover:border-ember transition-all">
