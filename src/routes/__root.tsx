@@ -143,7 +143,7 @@ function RootShell({ children }: { children: ReactNode }) {
               "alternateName": "Goodlife Fitness Club Solapur",
               "description": "Solapur's premium gym offering CrossFit, Zumba, Boxing, Power Yoga, Steam Bath, Salon and Spa. Expert personal trainers for weight loss, muscle gain and body transformation.",
               "url": "https://goodlife-fitness-website.vercel.app/",
-              "telephone": "+919325342686",
+              "telephone": "+919975212686",
               "priceRange": "₹₹",
               "hasMap": "https://maps.app.goo.gl/sdZ86UwrPESa7u416",
               "address": {

@@ -24,7 +24,10 @@ export function Location() {
               <Phone className="size-5 text-ember mt-1 shrink-0" />
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Phone</div>
-                <a href="tel:+919325342686" className="hover:text-ember transition-colors">+91 93253 42686</a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+919403925958" className="hover:text-ember transition-colors">+91 94039 25958</a>
+                  <a href="tel:+919975212686" className="hover:text-ember transition-colors">+91 99752 12686</a>
+                </div>
               </div>
             </div>
             <div className="flex gap-4">

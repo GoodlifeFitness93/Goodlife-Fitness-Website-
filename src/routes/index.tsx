@@ -83,7 +83,7 @@ const trainerNewAsset = { url: trainerNewAssetImg };
 
 
 const WHATSAPP_URL =
-  "https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans.";
+  "https://wa.me/919403925958?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans.";
 const SITE_URL = "https://goodlife-fitness-website.vercel.app/";
 
 const stats = [
@@ -231,7 +231,7 @@ export const Route = createFileRoute("/")({
           "alternateName": "Goodlife Fitness Club Solapur",
           "description": "Solapur's premium gym offering CrossFit, Zumba, Boxing, Power Yoga, Steam Bath, Salon and Spa. Expert personal trainers for weight loss, muscle gain and body transformation.",
           "url": "https://goodlife-fitness-website.vercel.app/",
-          "telephone": "+919325342686",
+          "telephone": "+919975212686",
           "priceRange": "₹₹",
           "hasMap": "https://maps.app.goo.gl/sdZ86UwrPESa7u416",
           "address": {
@@ -426,7 +426,7 @@ function HeroSection() {
             <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="btn-premium">
               Join Now <ArrowRight className="size-4" />
             </a>
-            <a href="tel:+919325342686" className="btn-secondary-premium">
+            <a href="tel:+919975212686" className="btn-secondary-premium">
               <Phone className="size-4 text-primary" /> Call Now
             </a>
             <a href="#facilities" className="btn-ghost-premium">
@@ -1059,7 +1059,7 @@ function ReviewGeneratorModal({ onClose }: ReviewGeneratorModalProps) {
     }
   };
 
-  const feedbackUrl = `https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20wanted%20to%20share%20some%20feedback%20about%20my%20experience%20and%20how%20you%20can%20make%20it%20right.`;
+  const feedbackUrl = `https://wa.me/919403925958?text=Hi%20Goodlife%20Fitness%20Club,%20I%20wanted%20to%20share%20some%20feedback%20about%20my%20experience%20and%20how%20you%20can%20make%20it%20right.`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 backdrop-blur-sm">
@@ -1282,7 +1282,7 @@ function FinalCtaSection() {
           <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="btn-premium">
             Join Now <ArrowRight className="size-4" />
           </a>
-          <a href="tel:+919325342686" className="btn-secondary-premium">
+          <a href="tel:+919975212686" className="btn-secondary-premium">
             <Phone className="size-4 text-primary" /> Call Now
           </a>
         </div>
@@ -1458,7 +1458,7 @@ function EnquirySection() {
     const phone = form.phone.trim().slice(0, 20);
     if (!name || !phone) return;
     const text = `Hi Goodlife Fitness Club,%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AGoal: ${encodeURIComponent(form.goal)}%0APreferred Slot: ${encodeURIComponent(form.slot)}%0AMessage: ${encodeURIComponent(form.message.trim().slice(0, 500) || "—")}%0A%0AI'd like to book a free trial / send an enquiry.`;
-    window.open(`https://wa.me/919325342686?text=${text}`, "_blank", "noopener");
+    window.open(`https://wa.me/919403925958?text=${text}`, "_blank", "noopener");
   }
 
   const inputCls = "w-full rounded-[8px] border border-border/50 bg-[#1c1c1c] px-4 py-3 text-sm text-white placeholder:text-muted-foreground/70 focus:border-[#FF6B00] focus:outline-none focus:ring-1 focus:ring-[#FF6B00]";

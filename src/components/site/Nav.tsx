@@ -116,10 +116,10 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="tel:+919325342686" className="hidden sm:inline-flex items-center gap-2 text-sm text-foreground hover:text-ember transition-colors">
-            <Phone className="size-4 text-ember" /> +91 93253 42686
+          <a href="tel:+919975212686" className="hidden sm:inline-flex items-center gap-2 text-sm text-foreground hover:text-ember transition-colors">
+            <Phone className="size-4 text-ember" /> +91 99752 12686
           </a>
-          <a href="https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans." target="_blank" rel="noopener" className="hidden md:inline-flex bg-ember text-primary-foreground px-5 py-2.5 text-sm tracking-wider uppercase font-semibold hover:bg-ember-glow transition-colors">
+          <a href="https://wa.me/919403925958?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans." target="_blank" rel="noopener" className="hidden md:inline-flex bg-ember text-primary-foreground px-5 py-2.5 text-sm tracking-wider uppercase font-semibold hover:bg-ember-glow transition-colors">
             Join Now
           </a>
           <button className="lg:hidden p-2 text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -130,19 +130,19 @@ export function Nav() {
 
       {/* Mobile Navigation */}
       {open && (
-        <div className="lg:hidden glass mt-3 mx-6 p-6 flex flex-col gap-4 max-h-[75vh] overflow-y-auto">
-          <a href="#about" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground uppercase text-sm tracking-wider py-1">About</a>
+        <div className="lg:hidden bg-[#111111] border border-border/60 shadow-2xl rounded-[8px] mt-3 mx-6 p-6 flex flex-col gap-4 max-h-[75vh] overflow-y-auto z-50">
+          <a href="#about" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground uppercase text-sm tracking-wider py-3 flex items-center min-h-[44px]">About</a>
 
           <div className="flex flex-col gap-2">
             <button 
               onClick={() => setMobileFacilitiesOpen(!mobileFacilitiesOpen)}
-              className="text-muted-foreground hover:text-foreground uppercase text-sm tracking-wider flex items-center justify-between w-full text-left outline-none cursor-pointer py-1"
+              className="text-muted-foreground hover:text-foreground uppercase text-sm tracking-wider flex items-center justify-between w-full text-left outline-none cursor-pointer py-3 min-h-[44px]"
             >
               <span>Facilities</span>
               <ChevronDown className={`size-4 transition-transform duration-200 ${mobileFacilitiesOpen ? "rotate-180" : ""}`} />
             </button>
             {mobileFacilitiesOpen && (
-              <div className="flex flex-col gap-3 pl-4 border-l border-border/40 mt-1 max-h-[250px] overflow-y-auto">
+              <div className="flex flex-col bg-[#111111] border border-border/40 rounded-[6px] pl-4 pr-3 mt-1 max-h-[250px] overflow-y-auto">
                 {facilities.map(f => (
                   <a 
                     key={f.href} 
@@ -151,7 +151,7 @@ export function Nav() {
                       setOpen(false);
                       setMobileFacilitiesOpen(false);
                     }} 
-                    className="text-muted-foreground/80 hover:text-foreground text-xs uppercase tracking-wider py-1"
+                    className="text-[#FFFFFF] hover:text-[#FF6B00] active:text-[#FF6B00] text-xs uppercase tracking-wider py-3 flex items-center min-h-[44px] transition-colors"
                   >
                     {f.label}
                   </a>

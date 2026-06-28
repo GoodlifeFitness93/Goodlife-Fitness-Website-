@@ -14,10 +14,10 @@ export function CTA() {
         </h2>
         <p className="mt-8 text-xl text-muted-foreground max-w-2xl mx-auto">Join the biggest fitness destination in Solapur and become the strongest version of yourself.</p>
         <div className="mt-12 flex flex-wrap justify-center gap-4">
-          <a href="https://wa.me/919325342686?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans." target="_blank" rel="noopener" className="group inline-flex items-center gap-3 bg-ember text-primary-foreground px-8 py-4 uppercase tracking-wider font-semibold hover:bg-ember-glow transition-all ember-glow">
+          <a href="https://wa.me/919403925958?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans." target="_blank" rel="noopener" className="group inline-flex items-center gap-3 bg-ember text-primary-foreground px-8 py-4 uppercase tracking-wider font-semibold hover:bg-ember-glow transition-all ember-glow">
             <MessageCircle className="size-5" /> Join via WhatsApp
           </a>
-          <a href="tel:+919325342686" className="inline-flex items-center gap-3 border border-foreground/30 px-8 py-4 uppercase tracking-wider font-semibold hover:border-ember hover:text-ember transition-colors">
+          <a href="tel:+919975212686" className="inline-flex items-center gap-3 border border-foreground/30 px-8 py-4 uppercase tracking-wider font-semibold hover:border-ember hover:text-ember transition-colors">
             <Phone className="size-5" /> Call Now
           </a>
         </div>
