@@ -1229,8 +1229,16 @@ function TestimonialsSection() {
             5.0 Google Rating
           </div>
         </div>
+        <div className="mt-8 flex justify-center">
+          <button 
+            onClick={() => setIsReviewModalOpen(true)}
+            className="border border-primary text-primary hover:bg-primary/10 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-[4px] cursor-pointer"
+          >
+            Add Your Review
+          </button>
+        </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {testimonials.map((item, index) => (
             <motion.blockquote
               key={item.name}
@@ -1245,15 +1253,6 @@ function TestimonialsSection() {
               <footer className="mt-6 border-t border-border/60 pt-5 text-sm font-semibold text-foreground">{item.name}</footer>
             </motion.blockquote>
           ))}
-        </div>
-
-        <div className="mt-12 flex justify-center">
-          <button 
-            onClick={() => setIsReviewModalOpen(true)}
-            className="border border-primary text-primary hover:bg-primary/10 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-[4px] cursor-pointer"
-          >
-            Add Your Review
-          </button>
         </div>
       </div>
 
