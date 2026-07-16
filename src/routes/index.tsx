@@ -487,7 +487,7 @@ function MomentumStrip() {
 
 function ReceptionSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-background py-24 md:py-32">
+    <section id="about" className="relative overflow-hidden bg-background py-24 md:py-32 scroll-mt-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(255,123,31,0.12),transparent_24%)]" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <ImageFrame src={receptionAsset.url} alt="Premium reception area at Goodlife Fitness Solapur" priority />
@@ -595,7 +595,7 @@ function SpinStudioSection() {
             ))}
           </div>
         </div>
-        <div className="relative overflow-hidden rounded-[8px] border border-border/70 shadow-premium">
+        <div className="relative overflow-hidden rounded-[8px] border border-border/70 shadow-premium aspect-[4/3]">
           <img src={spinStudioAsset.url} alt="Spinning studio at Goodlife Fitness premium gym Solapur" loading="lazy" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,8,15,0.12),rgba(5,8,15,0.42))]" />
           <motion.div
@@ -796,7 +796,7 @@ function PlanningSection() {
 
 function TransformationSection() {
   return (
-    <section id="transformations" className="bg-background py-24 md:py-32">
+    <section id="transformations" className="bg-background py-24 md:py-32 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
@@ -820,7 +820,7 @@ function TransformationSection() {
               transition={{ duration: 0.55, delay: i * 0.08 }}
               className="premium-panel overflow-hidden p-4"
             >
-              <div className="relative overflow-hidden rounded-[8px] border border-border/70 bg-black">
+              <div className="relative overflow-hidden rounded-[8px] border border-border/70 bg-black aspect-[3/4]">
                 <img src={item.image} alt="Body transformation result at Goodlife Fitness Solapur" loading="lazy" className="h-full w-full object-cover" />
               </div>
               <div className="mt-4 flex items-start justify-between gap-4">
@@ -923,7 +923,7 @@ function TrainersSection() {
   );
 
   return (
-    <section id="trainers" className="bg-background py-24 md:py-32">
+    <section id="trainers" className="bg-background py-24 md:py-32 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
           <Eyebrow centered>The Coaching Team</Eyebrow>
@@ -967,12 +967,12 @@ function TrainersSection() {
           transition={{ duration: 0.8 }}
           className="relative mt-10 overflow-hidden rounded-[12px] border border-border/60 bg-elevated p-2 sm:p-3"
         >
-          <div className="relative overflow-hidden rounded-[8px]">
+          <div className="relative overflow-hidden rounded-[8px] aspect-[16/9]">
             <img
               src={familyAsset.url}
               alt="Expert trainer team at Goodlife Fitness best gym Solapur"
               loading="lazy"
-              className="h-auto w-full object-cover object-center"
+              className="h-full w-full object-cover object-center"
             />
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-primary/10" />
           </div>
@@ -1216,7 +1216,7 @@ function TestimonialsSection() {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
 
   return (
-    <section id="reviews" className="bg-elevated py-24 md:py-32">
+    <section id="reviews" className="bg-elevated py-24 md:py-32 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
@@ -1402,7 +1402,7 @@ function FeatureShowcase({
   accent?: "power";
 }) {
   return (
-    <section id={id} className={`py-24 md:py-32 ${reverse ? "bg-background" : "bg-elevated"}`}>
+    <section id={id} className={`py-24 md:py-32 scroll-mt-24 ${reverse ? "bg-background" : "bg-elevated"}`}>
       <div className={`mx-auto grid max-w-7xl gap-10 px-6 lg:items-center lg:gap-16 ${reverse ? "lg:grid-cols-[0.96fr_1.04fr]" : "lg:grid-cols-[1.04fr_0.96fr]"}`}>
         <div className={reverse ? "lg:order-2" : ""}>
           <ImageFrame src={image} alt={alt} aggressive={aggressive} />
@@ -1525,12 +1525,14 @@ function ImageFrame({
       transition={{ duration: 0.7 }}
       className="group relative overflow-hidden rounded-[8px] border border-border/70 shadow-premium"
     >
-      <img
-        src={src}
-        alt={alt}
-        loading={priority ? "eager" : "lazy"}
-        className={`h-full w-full object-cover transition-transform duration-700 ${aggressive ? "group-hover:scale-[1.04]" : "group-hover:scale-[1.03]"}`}
-      />
+      <div className="aspect-[4/3]">
+        <img
+          src={src}
+          alt={alt}
+          loading={priority ? "eager" : "lazy"}
+          className={`h-full w-full object-cover transition-transform duration-700 ${aggressive ? "group-hover:scale-[1.04]" : "group-hover:scale-[1.03]"}`}
+        />
+      </div>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,8,10,0.02),rgba(8,8,10,0.28))]" />
       <div className="absolute inset-0 rounded-[8px] border border-white/6" />
     </motion.div>
