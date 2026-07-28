@@ -46,7 +46,7 @@ import trainer3AssetImg from "@/assets/trainer 3.webp";
 import trainer4AssetImg from "@/assets/trainer 4.webp";
 import trainer5NewAssetImg from "@/assets/goodlife-trainer-5-new.jpeg";
 import trainerNewAssetImg from "@/assets/goodlife-trainer-new.png";
-import familyAssetImg from "@/assets/Goodlife Fitness Team.webp";
+import familyAssetImg from "@/assets/Goodlife Fitness Team.jpg";
 import salonAssetImg from "@/assets/goodlife-salon.png.jpeg";
 import steamAssetImg from "@/assets/Steam.webp";
 import spaAssetImg from "@/assets/Spa.webp";
