@@ -10,7 +10,6 @@ import {
   Dumbbell,
   Flame,
   HeartPulse,
-  Camera as Instagram,
   MapPin,
   MessageCircle,
   Phone,
@@ -81,9 +80,20 @@ const trainer2NewAsset = { url: trainer2NewAssetImg };
 const trainer5NewAsset = { url: trainer5NewAssetImg };
 const trainerNewAsset = { url: trainerNewAssetImg };
 
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
 
 const WHATSAPP_URL =
   "https://wa.me/919403925958?text=Hi%20Goodlife%20Fitness%20Club,%20I%20would%20like%20to%20know%20more%20about%20membership%20plans.";
+const INSTAGRAM_URL =
+  "https://www.instagram.com/goodlifefitness_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
 const SITE_URL = "https://goodlife-fitness-website.vercel.app/";
 
 const stats = [
@@ -370,6 +380,8 @@ function Index() {
 }
 
 function HeroSection() {
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+
   return (
     <section id="top" className="relative min-h-screen overflow-hidden border-b border-border/60">
       <div className="absolute inset-0">
@@ -422,12 +434,24 @@ function HeroSection() {
             Train Smarter. Recover Better. Transform Faster.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-6">
+            <button
+              onClick={() => setIsReviewModalOpen(true)}
+              className="border border-primary text-primary hover:bg-primary/10 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-[4px] cursor-pointer"
+            >
+              Add Your Review
+            </button>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="btn-premium">
               Join Now <ArrowRight className="size-4" />
             </a>
             <a href="tel:+919975212686" className="btn-secondary-premium">
               <Phone className="size-4 text-primary" /> Call Now
+            </a>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-secondary-premium">
+              <InstagramIcon className="size-4 text-primary" /> Instagram
             </a>
             <a href="#facilities" className="btn-ghost-premium">
               <Play className="size-4 text-primary" /> Explore Club
@@ -457,6 +481,12 @@ function HeroSection() {
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {isReviewModalOpen && (
+          <ReviewGeneratorModal onClose={() => setIsReviewModalOpen(false)} />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
@@ -1193,7 +1223,7 @@ function ReviewGeneratorModal({ onClose }: ReviewGeneratorModalProps) {
                         : "Copy your review, then tap below to post it on Google Maps."}
                     </span>
                     <a
-                      href="https://www.google.com/maps/place/Goodlife+Fitness+Club/@17.6790241,75.8923844,16z/data=!4m8!3m7!1s0x3bc5d16fc2368433:0x710606bb688c8f37!8m2!3d17.6790241!4d75.8923844!9m1!1b1!16s%2Fg%2F11z56_r2x0?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                      href="https://g.page/r/CTePjGi7BgZxEBM/review"
                       target="_blank"
                       rel="noopener"
                       className="w-full text-center border border-primary text-primary hover:bg-primary/10 py-3 text-sm font-semibold uppercase tracking-wider transition rounded-[4px]"
